@@ -1,0 +1,63 @@
+:title: workflow
+:page-navtitle: 工作流程
+:chapter: 1
+:section: 1
+:page-section: {section}
+
+:CL: client
+:EP: 背书节点
+:OS: order service
+:CP: 提交节点
+
+== 工作流程 
+
+.交易流程时序图
+[plantuml, format=svg]
+....
+@startuml
+participant client
+box "endorsing peers"
+participant EP1
+participant EP2
+participant EP3
+end box
+participant os as "order service"
+box "committing peers"
+participant CP1
+participant CP2
+end box
+group (1)
+client -> EP1
+client -> EP2
+client -> EP3
+end group
+group (2)
+EP1 --> client
+EP2 --> client
+EP3 --> client
+end group
+client -> os: (3)
+group (4)
+os -> CP1
+os -> CP2
+os -> EP1
+os -> EP2
+os -> EP3
+end group
+@enduml
+....
+
+.交易流程
+(1)::
+客户端通过 SDK 接口向 *背书节点* 发送交易信息
+
+(2)::
+每个 *背书节点* 模拟处理交易，并不会把交易信息写入账本。*背书节点* 会验证交易的合法性，并对交易签名，返回给 *client*。此时没有完成全网共识，各个 *client* 的交易顺序没有确定，可能存在 *双花* 问题，还不算是 "有效的交易"。
+
+(3)::
+*client* 将签名后的交易发送给 *order servic* 集群进行交易排序和打包。*order servic* 集群通过共识算法对交易进行排序，打包成区块。
+
+(4)::
+*order servic* 将打包后的区块广播发送给 *提交节点*，由其做最后的验证，并写入链。
+
+CAUTION: *order servic* 在发给 *提交节点* 的同时，是否也发给了 *背书节点* ? 待确认

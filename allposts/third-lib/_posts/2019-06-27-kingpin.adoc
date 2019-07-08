@@ -1,0 +1,138 @@
+:title: kingpin
+:page-navtitle: kingpin
+:chapter: 4
+:section: 2
+:page-section: {section}
+
+== kingpin
+
+kingpin 是命令行的参数，Flag 的 parser
+
+=== 示例 1
+
+.源码 1
+[source,go]
+----
+package main
+
+import (
+    "fmt"
+
+    "gopkg.in/alecthomas/kingpin.v2"
+)
+
+var (
+    debug   = kingpin.Flag("debug", "Enable debug mode.").Bool()
+    timeout = kingpin.Flag("timeout", "Timeout waiting for ping.").Default("5s").OverrideDefaultFromEnvar("PING_TIMEOUT").Short('t').Duration()
+    ip      = kingpin.Arg("ip", "IP address to ping.").Required().IP()
+    count   = kingpin.Arg("count", "Number of packets to send").Int()
+)
+
+func main() {
+    kingpin.Version("0.0.1")
+    kingpin.Parse()
+    fmt.Printf("Would ping: %s with timeout %s and count %d\n", *ip, *timeout, *count)
+}
+----
+
+.效果 1
+[source,bash]
+----
+$ ping --help
+usage: ping [<flags>] <ip> [<count>]
+
+Flags:
+  --debug            Enable debug mode.
+  --help             Show help.
+  -t, --timeout=5s   Timeout waiting for ping.
+
+Args:
+  <ip>        IP address to ping.
+  [<count>]   Number of packets to send
+$ ping 1.2.3.4 5
+Would ping: 1.2.3.4 with timeout 5s and count 5
+----
+
+=== 示例 2
+
+.源码 2
+[source,go]
+[source,go]
+----
+package main
+
+import (
+    "os"
+    "strings"
+    "gopkg.in/alecthomas/kingpin.v2"
+)
+
+var (
+    app      = kingpin.New("chat", "A command-line chat application.")
+    debug    = app.Flag("debug", "Enable debug mode.").Bool()
+    serverIP = app.Flag("server", "Server address.").Default("127.0.0.1").IP()
+
+    register     = app.Command("register", "Register a new user.")
+    registerNick = register.Arg("nick", "Nickname for user.").Required().String()
+    registerName = register.Arg("name", "Name of user.").Required().String()
+
+    post        = app.Command("post", "Post a message to a channel.")
+    postImage   = post.Flag("image", "Image to post.").File()
+    postChannel = post.Arg("channel", "Channel to post to.").Required().String()
+    postText    = post.Arg("text", "Text to post.").Strings()
+)
+
+func main() {
+    switch kingpin.MustParse(app.Parse(os.Args[1:])) {
+    // Register user
+    case register.FullCommand():
+        println(*registerNick)
+
+    // Post message
+    case post.FullCommand():
+        if *postImage != nil {
+        }
+        text := strings.Join(*postText, " ")
+        println("Post:", text)
+    }
+}
+----
+
+.效果 2
+[source,bash]
+----
+$ chat --help
+usage: chat [<flags>] <command> [<flags>] [<args> ...]
+
+A command-line chat application.
+
+Flags:
+  --help              Show help.
+  --debug             Enable debug mode.
+  --server=127.0.0.1  Server address.
+
+Commands:
+  help [<command>]
+    Show help for a command.
+
+  register <nick> <name>
+    Register a new user.
+
+  post [<flags>] <channel> [<text>]
+    Post a message to a channel.
+
+$ chat help post
+usage: chat [<flags>] post [<flags>] <channel> [<text>]
+
+Post a message to a channel.
+
+Flags:
+  --image=IMAGE  Image to post.
+
+Args:
+  <channel>  Channel to post to.
+  [<text>]   Text to post.
+
+$ chat post --image=~/Downloads/owls.jpg pics
+...
+----

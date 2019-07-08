@@ -1,0 +1,132 @@
+:title: orderer
+:toc: true
+:toclevels: 4
+:page-navtitle: orderder 调试
+:chapter: 2
+:section: 2
+:page-section: {section}
+
+== orderer 调试
+
+orderer 启动时，从 /orderer/main.go 入口
+
+./orderer/main.go
+[source,go]
+----
+func main() {
+	server.Main()
+}
+----
+
+调用的是 ./orderer/common/server/main.go
+
+./orderer/common/server/main.go
+[source,go]
+----
+func Main() {
+	fullCmd := kingpin.MustParse(app.Parse(os.Args[1:]))
+
+	// "version" command
+	if fullCmd == version.FullCommand() {
+		fmt.Println(metadata.GetVersionInfo())
+		return
+	}
+
+	conf, err := localconfig.Load() // <1>
+	if err != nil {
+		logger.Error("failed to parse config: ", err)
+		os.Exit(1)
+	}
+	initializeLogging()
+	initializeLocalMsp(conf)
+
+	prettyPrintStruct(conf)
+	Start(fullCmd, conf)
+}
+----
+<1> 加载配置
+
+=== 加载配置
+
+./orderer/common/localconfig/config.go
+[source,go]
+----
+func Load() (*TopLevel, error) {
+	config := viper.New()
+	coreconfig.InitViper(config, "orderer") // <1>
+	config.SetEnvPrefix(Prefix)
+	config.AutomaticEnv() // <2>
+	replacer := strings.NewReplacer(".", "_")
+	config.SetEnvKeyReplacer(replacer)
+
+	if err := config.ReadInConfig(); err != nil {
+		return nil, fmt.Errorf("Error reading configuration: %s", err)
+	}
+
+	var uconf TopLevel
+	if err := viperutil.EnhancedExactUnmarshal(config, &uconf); err != nil {
+		return nil, fmt.Errorf("Error unmarshaling config into struct: %s", err)
+	}
+
+	uconf.completeInitialization(filepath.Dir(config.ConfigFileUsed()))
+	return &uconf, nil
+}
+----
+<1> 初始化一个 viper 实例，制定配置文件名字为 orderer
+<2> 自动读取 *环境变量*
+
+==== 配置文件与环境变量的关系是怎样的呢
+
+进入 coreconfig.InitViper 内部 
+
+./core/config/config.go
+[source,go]
+----
+func InitViper(v *viper.Viper, configName string) error {
+	var altPath = os.Getenv("FABRIC_CFG_PATH") // <1>
+	if altPath != "" {
+		// If the user has overridden the path with an envvar, its the only path
+		// we will consider
+
+		if !dirExists(altPath) {
+			return fmt.Errorf("FABRIC_CFG_PATH %s does not exist", altPath)
+		}
+
+		AddConfigPath(v, altPath)
+	} else {
+		// If we get here, we should use the default paths in priority order:
+		//
+		// *) CWD
+		// *) /etc/hyperledger/fabric
+
+		// CWD
+		AddConfigPath(v, "./")
+
+		// And finally, the official path
+		if dirExists(OfficialPath) {
+			AddConfigPath(v, OfficialPath)
+		}
+	}
+
+	// Now set the configuration file.
+	if v != nil {
+		v.SetConfigName(configName)
+	} else {
+		viper.SetConfigName(configName)
+	}
+
+	return nil
+}
+----
+<1> 获取环境变量 *FABRIC_CFG_PATH* 的值
+
+*FABRIC_CFG_PATH* 指定了配置文件所在的位置，若未指定，则为当前文件夹
+
+viper 支持的配置文件扩展名有 7 种
+
+.github.com/spf13/viper/viper.go
+[source,go]
+----
+// Universally supported extensions.
+var SupportedExts []string = []string{"json", "toml", "yaml", "yml", "properties", "props", "prop"}
+----

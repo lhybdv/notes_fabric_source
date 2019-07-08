@@ -1,0 +1,15 @@
+include::2019-06-24-head.adoc[]
+
+include::../../principle/_posts/2019-06-18-workflow.adoc[]
+
+include::../../debug/_posts/2019-06-21-overview.adoc[]
+
+include::../../source/_posts/2019-06-19-abbreviation.adoc[]
+
+include::../../source/_posts/2019-06-19-directory.adoc[]
+
+include::../../source/_posts/2019-06-19-peer.adoc[]
+
+include::../../third-lib/_posts/2019-06-26-jww.adoc[]
+
+include::../../third-lib/_posts/2019-06-27-kingpin.adoc[]
