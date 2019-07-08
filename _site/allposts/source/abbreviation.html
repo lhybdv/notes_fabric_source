@@ -1,0 +1,575 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Abbreviation</title>
+        <meta
+            name="description"
+            content="The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc."
+        />
+        <meta name="author" content="Your name goes here" />
+        <meta name="copyright" content="Maybe consider a Creative Commons license" />
+        <link rel="stylesheet" href="/css/foundation.css" />
+        <link rel="stylesheet" href="/css/font-awesome.css" />
+        <link rel="stylesheet" href="/css/asciidoctor.css" />
+        <link rel="stylesheet" href="/css/custom.css" />
+        <link rel="stylesheet" href="/css/prettify.min.css" />
+    </head>
+    <body>
+        <!-- Main Page Content and Sidebar -->
+
+        <!-- Sidebar -->
+
+        <div class="post with-summary">
+            <div class="post-summary">
+                <div class="search-container">
+                    <!-- <a href="/">fabric source</a> -->
+                    <input id="search_box" type="search" placeholder="Search..." />
+                    <i class="fa fa-search"></i>
+                </div>
+                <ul class="category">
+                    
+                    <li>
+                        <a>原理</a>
+                    </li>
+                    <ul class="post">
+                         
+                        <li>
+                            <a href="/allposts/principle/workflow">工作流程</a>
+                        </li>
+                        
+                    </ul>
+                    
+                    <li>
+                        <a>调试</a>
+                    </li>
+                    <ul class="post">
+                         
+                        <li>
+                            <a href="/allposts/debug/overview">概览</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/allposts/debug/orderder">orderder 调试</a>
+                        </li>
+                        
+                    </ul>
+                    
+                    <li>
+                        <a>源码</a>
+                    </li>
+                    <ul class="post">
+                         
+                        <li>
+                            <a href="/allposts/source/abbreviation">缩写</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/allposts/source/directory">目录</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/allposts/source/peer">peer</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/allposts/source/orderer">orderer</a>
+                        </li>
+                        
+                    </ul>
+                    
+                    <li>
+                        <a>第三方库</a>
+                    </li>
+                    <ul class="post">
+                         
+                        <li>
+                            <a href="/allposts/third-lib/jww">jww</a>
+                        </li>
+                        
+                        <li>
+                            <a href="/allposts/third-lib/kingpin">kingpin</a>
+                        </li>
+                        
+                    </ul>
+                    
+                </ul>
+            </div>
+
+            <!-- End Sidebar -->
+
+            <!-- Main Blog Content -->
+            <div class="post-body" role="content">
+                <div class="body-container">
+                    <div class="page-header">
+                        <a class="btn pull-left">
+                            <i class="fa fa-align-justify"></i>
+                        </a>
+                        <div class="project-title">
+                            <div class="project-title-inner">
+                                <a href="/">
+                                    fabric source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <div>
+                            <div id="content" class="page-inner">
+                                <div class="sect1">
+<h2 id="缩写">缩写</h2>
+<div class="sectionbody">
+<table class="tableblock frame-all grid-all stretch">
+<caption class="title">Table 1. 缩写</caption>
+<colgroup>
+<col style="width: 25%;">
+<col style="width: 75%;">
+</colgroup>
+<tbody>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">缩写</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">描述</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MSP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Membership service provider 会员服务提供者</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">BCCSP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">blockchain（前两个字母BC） cryptographic service provider 区域链加密服务提供者</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ab</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">atomic broadcast原子（操作）广播</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lscc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lifecycle(L) system(S) chaincode（CC）生命周期系统链码</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Spec</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Specification，规格标准，详细说明</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KV</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">key-value 键-值</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CDS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ChaincodeDeploymentSpec</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CIS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ChaincodeInvocationSpec</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mgmt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">management</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SW</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">software-based</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AtomicBroadcast</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">GB</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">genesis block，创世纪的block，也就是区域链中的第一个块</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CC或cc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SCC或scc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">system chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cscc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">configer system chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lscc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">lifecycle system chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">escc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">endorser system chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vscc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">validator system chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">qscc</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">querier system chaincode</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">alg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">algorithm 算法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mcs</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mspMessageCryptoService</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mock</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">假装，学样子，模仿的意思，基本上是服务于xxx_test.go的，即用于测试的</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Gossip</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">一种使分布结点达到状态最终一致的算法</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">attribute</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FsBlockStore</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">file system block store</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">vdb</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">versioned database 也就是状态数据库</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">RTEnv</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">runtime environment运行环境</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pkcs11</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">pcks#11，一种公匙加密标准，有一套叫做Cryptoki的接口，是一组平台设备无关的API</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">MCS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mspMessageCryptoService，消息加密服务</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">sa</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SecurityAdvisor</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">impl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">implement，好多处XXX.go和XXXimpl.go是对应的，前者是用于接口或者定义的，后者是实现该接口或定义的</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FSM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">finite state machine 有限状态机</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FS</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">filesystem 文件系统</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">blk</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">block</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cli</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">command line interface 命令行界面</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CFG</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">FABRIC_CFG_PATH中的，应该是config的意思</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">mgr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">manager</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cpinfo</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">checkpoint information，检查点信息</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">DevMode</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">development mode，开发模式</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Reg</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">register，注册，登记</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">hdr</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">header</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">impl</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">implement</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ObjectIdentifier，对象标识符</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ou或OU</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">organizational unit</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CRL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">certificate revocation list，废除证书列表</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">prop</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">proposal，申请，交易所发送的申请</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ACL</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Access Control List，访问控制列表</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">rwset</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">read/write set，读写集</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">tx，Tx</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">transaction，交易</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">CSP</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">cryptographic service provider，BCCSP的后三个字母，加密服务提供者</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opt</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">option，选项</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">opts</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">options，多个选项</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">SKI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">当前证书标识，所谓标识，一般是对公匙进行一下hash</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">AKI</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">签署方的SKI，也就是签署方的公匙标识</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">HSM</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">Hardware Security Modules</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">ks</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">KeyStore，Key存储，这个key指的是用于签名的公匙私匙</p></td>
+</tr>
+<tr>
+<td class="tableblock halign-left valign-top"><p class="tableblock">oid</p></td>
+<td class="tableblock halign-left valign-top"><p class="tableblock">OBJECT IDENTIFIER，对象身份标识</p></td>
+</tr>
+</tbody>
+</table>
+<div class="admonitionblock warning">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-warning" title="Warning"></i>
+</td>
+<td class="content">
+来源于网络，待整理确认
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+                            </div>
+                            <div id="search_result_container" class="page-inner">
+                                <ul id="search-results"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Main Content -->
+
+        <!-- End Main Content and Sidebar -->
+
+        <!-- Footer -->
+
+        <script src="/js/vendor/jquery.js"></script>
+        <script src="/js/foundation.min.js"></script>
+        <script src="/js/vendor/modernizr.js"></script>
+        <script src="/js/toc.js"></script>
+
+        <script src="/js/search/lunr.min.js"></script>
+        <script src="/js/search/lunr.stemmer.support.js"></script>
+        <script src="/js/search/tinyseg.js"></script>
+        <script src="/js/search/lunr.ja.js"></script>
+        <script src="/js/search/search.js"></script>
+        <script>
+            $(document).foundation();
+            var doc = document.documentElement;
+            doc.setAttribute("data-useragent", navigator.userAgent);
+
+            var host = window.location.host;
+            var wholeHref = window.location.href;
+
+            var href = wholeHref
+                .replace("https://", "")
+                .replace("http://", "")
+                .replace(host, "");
+
+            var list = $(".post > li > a");
+            list.each(function() {
+                if ($(this).attr("href") === href) {
+                    $(this).addClass("active");
+                    return false;
+                }
+            });
+
+            $(".btn.pull-left").click(function() {
+                var $post = $(".post");
+                if ($post.hasClass("with-summary")) {
+                    $(".post-summary").animate({ left: "-300px" }, "slow");
+                    $(".post-body").animate({ left: 0 }, "slow", function() {
+                        $post.removeClass("with-summary");
+                    });
+                    $(".page-header").animate({left:0}, "slow")
+                } else {
+                    $(".post-summary").animate({ left: 0 }, "slow");
+                    $(".post-body").animate({ left: "300px" }, "slow");
+                    $post.addClass("with-summary");
+                    $(".page-header").animate({left: "300px"}, "slow")
+                }
+            });
+
+            window.store = {
+                
+                    "allposts-source-orderer": {
+                        "title": "orderer",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: orderer:page-navtitle: orderer:chapter: 3:section: 4:page-section: {section}== ordererorderer 的入口在于 /orderer/main.go",
+                        "url": "/allposts/source/orderer"
+                    }
+                    ,
+                
+                    "allposts-debug-orderder": {
+                        "title": "orderder 调试",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: orderer:toc: true:toclevels: 4:page-navtitle: orderder 调试:chapter: 2:section: 2:page-section: {section}== orderer 调试orderer 启动时，从 /orderer/main.go 入口./orderer/main.go[source,go]----func main() {\tserver.Main()}----调用的是 ./orderer/common/server/main.go./orderer/common/server/main.go[source,go]----func Main() {\tfullCmd := kingpin.MustParse(app.Parse(os.Args[1:]))\t// \"version\" command\tif fullCmd == version.FullCommand() {\t\tfmt.Println(metadata.GetVersionInfo())\t\treturn\t}\tconf, err := localconfig.Load() // \tif err != nil {\t\tlogger.Error(\"failed to parse config: \", err)\t\tos.Exit(1)\t}\tinitializeLogging()\tinitializeLocalMsp(conf)\tprettyPrintStruct(conf)\tStart(fullCmd, conf)}---- 加载配置=== 加载配置./orderer/common/localconfig/config.go[source,go]----func Load() (*TopLevel, error) {\tconfig := viper.New()\tcoreconfig.InitViper(config, \"orderer\") // \tconfig.SetEnvPrefix(Prefix)\tconfig.AutomaticEnv() // \treplacer := strings.NewReplacer(\".\", \"_\")\tconfig.SetEnvKeyReplacer(replacer)\tif err := config.ReadInConfig(); err != nil {\t\treturn nil, fmt.Errorf(\"Error reading configuration: %s\", err)\t}\tvar uconf TopLevel\tif err := viperutil.EnhancedExactUnmarshal(config, &uconf); err != nil {\t\treturn nil, fmt.Errorf(\"Error unmarshaling config into struct: %s\", err)\t}\tuconf.completeInitialization(filepath.Dir(config.ConfigFileUsed()))\treturn &uconf, nil}---- 初始化一个 viper 实例，制定配置文件名字为 orderer 自动读取 *环境变量*==== 配置文件与环境变量的关系是怎样的呢进入 coreconfig.InitViper 内部 ./core/config/config.go[source,go]----func InitViper(v *viper.Viper, configName string) error {\tvar altPath = os.Getenv(\"FABRIC_CFG_PATH\") // \tif altPath != \"\" {\t\t// If the user has overridden the path with an envvar, its the only path\t\t// we will consider\t\tif !dirExists(altPath) {\t\t\treturn fmt.Errorf(\"FABRIC_CFG_PATH %s does not exist\", altPath)\t\t}\t\tAddConfigPath(v, altPath)\t} else {\t\t// If we get here, we should use the default paths in priority order:\t\t//\t\t// *) CWD\t\t// *) /etc/hyperledger/fabric\t\t// CWD\t\tAddConfigPath(v, \"./\")\t\t// And finally, the official path\t\tif dirExists(OfficialPath) {\t\t\tAddConfigPath(v, OfficialPath)\t\t}\t}\t// Now set the configuration file.\tif v != nil {\t\tv.SetConfigName(configName)\t} else {\t\tviper.SetConfigName(configName)\t}\treturn nil}---- 获取环境变量 *FABRIC_CFG_PATH* 的值*FABRIC_CFG_PATH* 指定了配置文件所在的位置，若未指定，则为当前文件夹viper 支持的配置文件扩展名有 7 种.github.com/spf13/viper/viper.go[source,go]----// Universally supported extensions.var SupportedExts []string = []string{\"json\", \"toml\", \"yaml\", \"yml\", \"properties\", \"props\", \"prop\"}----",
+                        "url": "/allposts/debug/orderder"
+                    }
+                    ,
+                
+                    "allposts-third-lib-kingpin": {
+                        "title": "kingpin",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: kingpin:page-navtitle: kingpin:chapter: 4:section: 2:page-section: {section}== kingpinkingpin 是命令行的参数，Flag 的 parser=== 示例 1.源码 1[source,go]----package mainimport (    \"fmt\"    \"gopkg.in/alecthomas/kingpin.v2\")var (    debug   = kingpin.Flag(\"debug\", \"Enable debug mode.\").Bool()    timeout = kingpin.Flag(\"timeout\", \"Timeout waiting for ping.\").Default(\"5s\").OverrideDefaultFromEnvar(\"PING_TIMEOUT\").Short('t').Duration()    ip      = kingpin.Arg(\"ip\", \"IP address to ping.\").Required().IP()    count   = kingpin.Arg(\"count\", \"Number of packets to send\").Int())func main() {    kingpin.Version(\"0.0.1\")    kingpin.Parse()    fmt.Printf(\"Would ping: %s with timeout %s and count %d\\n\", *ip, *timeout, *count)}----.效果 1[source,bash]----$ ping --helpusage: ping []  []Flags:  --debug            Enable debug mode.  --help             Show help.  -t, --timeout=5s   Timeout waiting for ping.Args:          IP address to ping.  []   Number of packets to send$ ping 1.2.3.4 5Would ping: 1.2.3.4 with timeout 5s and count 5----=== 示例 2.源码 2[source,go][source,go]----package mainimport (    \"os\"    \"strings\"    \"gopkg.in/alecthomas/kingpin.v2\")var (    app      = kingpin.New(\"chat\", \"A command-line chat application.\")    debug    = app.Flag(\"debug\", \"Enable debug mode.\").Bool()    serverIP = app.Flag(\"server\", \"Server address.\").Default(\"127.0.0.1\").IP()    register     = app.Command(\"register\", \"Register a new user.\")    registerNick = register.Arg(\"nick\", \"Nickname for user.\").Required().String()    registerName = register.Arg(\"name\", \"Name of user.\").Required().String()    post        = app.Command(\"post\", \"Post a message to a channel.\")    postImage   = post.Flag(\"image\", \"Image to post.\").File()    postChannel = post.Arg(\"channel\", \"Channel to post to.\").Required().String()    postText    = post.Arg(\"text\", \"Text to post.\").Strings())func main() {    switch kingpin.MustParse(app.Parse(os.Args[1:])) {    // Register user    case register.FullCommand():        println(*registerNick)    // Post message    case post.FullCommand():        if *postImage != nil {        }        text := strings.Join(*postText, \" \")        println(\"Post:\", text)    }}----.效果 2[source,bash]----$ chat --helpusage: chat []  [] [ ...]A command-line chat application.Flags:  --help              Show help.  --debug             Enable debug mode.  --server=127.0.0.1  Server address.Commands:  help []    Show help for a command.  register      Register a new user.  post []  []    Post a message to a channel.$ chat help postusage: chat [] post []  []Post a message to a channel.Flags:  --image=IMAGE  Image to post.Args:    Channel to post to.  []   Text to post.$ chat post --image=~/Downloads/owls.jpg pics...----",
+                        "url": "/allposts/third-lib/kingpin"
+                    }
+                    ,
+                
+                    "allposts-third-lib-jww": {
+                        "title": "jww",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: jww:toc: true:page-navtitle: jww:chapter: 4:section: 1:page-section: {section}== jwwjww 全称 jwalterweatherman，源码在 https://github.com/spf13/jwalterweatherman[github]=== 特点. 可同时进行 terminal 输出 和 日志记录. 可分别进行级别控制=== 级别. TRACE. DEBUG. INFO. WARN. ERROR. CRITICAL. FATAL[source,go,indent=0]----const (\tLevelTrace Threshold = iota\tLevelDebug\tLevelInfo\tLevelWarn\tLevelError\tLevelCritical\tLevelFatal)----通过源码可以看到，级别是个枚举，其对应的数值由 0 至 6 逐渐增大。 默认情况下:. Trace, Debug, Info 对应的是 devNull，即被忽略. Warn 及以上，会被写入日志(如果提供了日志文件的话). Error 及以上会被打印到 terminal[TIP]====devNull 是什么?.devNull 的部分代码[source,go]----type devNull intfunc (devNull) Write(p []byte) (int, error) {\treturn len(p), nil}----从代码可以看出，devNull 是 io.Writer 的实现，其 Write 方法内部没有做任何 *写* 的操作，从而达到了 *忽略* 的效果======= 示例.github.com/spf13/viper/util.go[source,go,]----func absPathify(inPath string) string {\tjww.INFO.Println(\"Trying to resolve absolute path to\", inPath) // \tif strings.HasPrefix(inPath, \"$HOME\") {\t\tinPath = userHomeDir() + inPath[5:]\t}\tif strings.HasPrefix(inPath, \"$\") {\t\tend := strings.Index(inPath, string(os.PathSeparator))\t\tinPath = os.Getenv(inPath[1:end]) + inPath[end:]\t}\tif filepath.IsAbs(inPath) {\t\treturn filepath.Clean(inPath)\t}\tp, err := filepath.Abs(inPath)\tif err == nil {\t\treturn filepath.Clean(p)\t} else {\t\tjww.ERROR.Println(\"Couldn't discover absolute path\") // \t\tjww.ERROR.Println(err) \t}\treturn \"\"}---- INFO 级别 ERROR 级别 ERROR 级别=== 意义是什么?以 viper 这个库为例，如果\b不做级别设置，那么日志只记录 Warn 及以上级别的信息，terminal 只输出 Error 及以上级别的信息，换言之，是有了一定的错误的时候。但是如果我们代码中，在使用 viper 的时候，出现了问题，我们想知道更多细节，就可以打出更多级别的消息。比如:[source,go]----jww.SetStdoutThreshold(jww.LevelTrace) // jww.SetLogThreshold(jww.LevelTrace) // ---- 设置 terminal 输出级别为 Trace 设置 log 输出级别为 Trace这样，就可以打印出所有消息，*按需输出*，这种方式很灵活。",
+                        "url": "/allposts/third-lib/jww"
+                    }
+                    ,
+                
+                    "allposts-all-head": {
+                        "title": "",
+                        "author": "Liuhuiyu",
+                        "category": "",
+                        "content": ":page-layout: _auto= fabric 学习笔记Liuhuiyu ",
+                        "url": "/allposts/all/head"
+                    }
+                    ,
+                
+                    "allposts-all-all": {
+                        "title": "",
+                        "author": "Liuhuiyu",
+                        "category": "",
+                        "content": ":page-layout: _autoinclude::2019-06-24-head.adoc[]include::../../principle/_posts/2019-06-18-workflow.adoc[]include::../../debug/_posts/2019-06-21-overview.adoc[]include::../../source/_posts/2019-06-19-abbreviation.adoc[]include::../../source/_posts/2019-06-19-directory.adoc[]include::../../source/_posts/2019-06-19-peer.adoc[]include::../../third-lib/_posts/2019-06-26-jww.adoc[]include::../../third-lib/_posts/2019-06-27-kingpin.adoc[]",
+                        "url": "/allposts/all/all"
+                    }
+                    ,
+                
+                    "allposts-debug-overview": {
+                        "title": "概览",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: overview:toc: true:toclevels: 4:page-navtitle: 概览:chapter: 2:section: 1:page-section: {section}== 概览=== 准备工作* fabric 源码，fabric-samples 源码* GoLand=== 步骤. 用 GoLand 打开 fabric 源码. 新建 dev-network 目录. 把 sampleconfig 下的所有文件复制到 dev-network. 修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径). 修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径). 在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block=== 调试准备==== 第 1 步 点击菜单项 Run/Edit Configurations.点击菜单项 Run/Edit Configurationsimage::../../../images/2019-06-25-14-03-43.png[,500]==== 第 2 步点击弹出窗口左上交的 + 按钮.弹出窗口左侧 + 按钮image::../../../images/2019-06-25-14-09-37.png[,500]点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go Build.configuration 的选项image::../../../images/2019-06-25-14-12-24.png[,500]==== 第 3 步.configuration 的具体设置image::../../../images/2019-06-25-14-53-49.png[]. Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。. Run kind 包括 Directory, Package, File 几种类型. Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件. Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 *;* 隔开. Program arguments 是程序运行时需要的命令行参数==== 第 4 步.创建好的 configurationsimage::../../../images/2019-06-26-10-44-50.png[]选择一个 configuration，然后点击红色的按钮，即可开始调试=== 调试 orderer 入口位置::orderer/main.go main 函数Environment::. ORDERER_GENERAL_LISTENADDRESS=0.0.0.0. ORDERER_GENERAL_GENESISMETHOD=file. ORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径). ORDERER_GENERAL_LOCALMSPID=DEFAULT. ORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径). FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)=== 调试 peer start入口位置::peer/main.go main 函数Program arguments::node start --peer-chaincodedev=trueEnvironment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=peer. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)rt=== 调试 create channel入口位置::peer/main.go main 函数Program arguments::channel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050　　Environment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 join channel入口位置::peer/main.go main 函数Program arguments::channel join -b myc.blockEnvironment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 install chaincode入口位置::peer/main.go main 函数Program arguments::chaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0　　Environment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)CAUTION: 其余部分待补充",
+                        "url": "/allposts/debug/overview"
+                    }
+                    ,
+                
+                    "allposts-source-peer": {
+                        "title": "peer",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: peer:page-navtitle: peer:chapter: 3:section: 3:page-section: {section}== peer .peer 命令结构[plantuml, format=svg]....@startwbs+ peer++ chaincode+++ install+++ instantiate+++ invoke+++ package+++ query+++ signpackage+++ upgrade+++ list++ channel+++ create+++ fetch+++ join+++ list+++ update+++ signconfigtx+++ getinfo++ clilogging+++ getLevel+++ setLevel+++ revertLevels+++ getLogSpec+++ setLogSpec++ node+++ start+++ status++ version@endwbs....",
+                        "url": "/allposts/source/peer"
+                    }
+                    ,
+                
+                    "allposts-source-directory": {
+                        "title": "目录",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: directory:page-navtitle: 目录:chapter: 3:section: 2:page-section: {section}== 目录.目录[cols=\"1,3\"]|===|bcssp|加密服务代码目录|common|全局公用代码目录|core|核心功能代码目录|docs|以.rst文件为核心，可编译生成文档。说明文档的目录|events|事件代码目录，用于生产和消费信息|examples|示例目录|gossip|本意是绯闻的意思，是一种可达到去中心化，有一定容错能力且可达到最终一致的传播算法|msp|会员服务代码目录|orderer|就理解成orderer目录就好，orderer也算是区域链中的专用名词，用于消息的订阅与分发处理|protos|原型目录，定义个各种原型和生成的对应的XXX.pb.go源码|vendor|原意是商贩，在此就是存放go中使用的全部的各种第三方包|===WARNING: 来源于网络，待整理确认",
+                        "url": "/allposts/source/directory"
+                    }
+                    ,
+                
+                    "allposts-source-abbreviation": {
+                        "title": "缩写",
+                        "author": "",
+                        "category": "",
+                        "content": "缩写Table 1. 缩写缩写描述MSPMembership service provider 会员服务提供者BCCSPblockchain（前两个字母BC） cryptographic service provider 区域链加密服务提供者abatomic broadcast原子（操作）广播lscclifecycle(L) system(S) chaincode（CC）生命周期系统链码SpecSpecification，规格标准，详细说明KVkey-value 键-值CDSChaincodeDeploymentSpecCISChaincodeInvocationSpecmgmtmanagementSWsoftware-basedABAtomicBroadcastGBgenesis block，创世纪的block，也就是区域链中的第一个块CC或ccchaincodeSCC或sccsystem chaincodecsccconfiger system chaincodelscclifecycle system chaincodeesccendorser system chaincodevsccvalidator system chaincodeqsccquerier system chaincodealgalgorithm 算法mcsmspMessageCryptoServicemock假装，学样子，模仿的意思，基本上是服务于xxx_test.go的，即用于测试的Gossip一种使分布结点达到状态最终一致的算法attrattributeFsBlockStorefile system block storevdbversioned database 也就是状态数据库RTEnvruntime environment运行环境pkcs11pcks#11，一种公匙加密标准，有一套叫做Cryptoki的接口，是一组平台设备无关的APIMCSmspMessageCryptoService，消息加密服务saSecurityAdvisorimplimplement，好多处XXX.go和XXXimpl.go是对应的，前者是用于接口或者定义的，后者是实现该接口或定义的FSMfinite state machine 有限状态机FSfilesystem 文件系统blkblockclicommand line interface 命令行界面CFGFABRIC_CFG_PATH中的，应该是config的意思mgrmanagercpinfocheckpoint information，检查点信息DevModedevelopment mode，开发模式Regregister，注册，登记hdrheaderimplimplementoidObjectIdentifier，对象标识符ou或OUorganizational unitCRLcertificate revocation list，废除证书列表propproposal，申请，交易所发送的申请ACLAccess Control List，访问控制列表rwsetread/write set，读写集tx，Txtransaction，交易CSPcryptographic service provider，BCCSP的后三个字母，加密服务提供者optoption，选项optsoptions，多个选项SKI当前证书标识，所谓标识，一般是对公匙进行一下hashAKI签署方的SKI，也就是签署方的公匙标识HSMHardware Security ModulesksKeyStore，Key存储，这个key指的是用于签名的公匙私匙oidOBJECT IDENTIFIER，对象身份标识来源于网络，待整理确认",
+                        "url": "/allposts/source/abbreviation"
+                    }
+                    ,
+                
+                    "allposts-principle-workflow": {
+                        "title": "工作流程",
+                        "author": "",
+                        "category": "",
+                        "content": "工作流程Figure 1. 交易流程时序图交易流程(1)客户端通过 SDK 接口向 背书节点 发送交易信息(2)每个 背书节点 模拟处理交易，并不会把交易信息写入账本。背书节点 会验证交易的合法性，并对交易签名，返回给 client。此时没有完成全网共识，各个 client 的交易顺序没有确定，可能存在 双花 问题，还不算是 \"有效的交易\"。(3)client 将签名后的交易发送给 order servic 集群进行交易排序和打包。order servic 集群通过共识算法对交易进行排序，打包成区块。(4)order servic 将打包后的区块广播发送给 提交节点，由其做最后的验证，并写入链。order servic 在发给 提交节点 的同时，是否也发给了 背书节点 ? 待确认",
+                        "url": "/allposts/principle/workflow"
+                    }
+                    
+                
+            };
+
+            $("#search_box").keyup(function() {
+                var searchTerm = $("#search_box").val();
+                if (searchTerm.length === 0) {
+                    $("#content").show()
+                    $("#search_result_container").hide()
+                } else {
+                    $("#search_result_container").show()
+                    $("#content").hide()
+                    search();
+                }
+            });
+
+            $("#search_box").blur(function() {
+                $("#content").show()
+                $("#search_result_container").hide()
+            });
+
+            $("code").each(function() {
+                let $this = $(this);
+                var html = $this.html()
+
+                // replace tab with 4 spaces
+                html = html.replace(/\t/g, "    ")
+                $this.html(html)
+            })
+        </script>
+        <script src="/js/prettify.min.js"></script>
+        <script>
+            prettyPrint();
+        </script>
+    </body>
+</html>
