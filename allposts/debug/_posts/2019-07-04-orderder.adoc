@@ -54,8 +54,8 @@ func Main() {
 func Load() (*TopLevel, error) {
 	config := viper.New()
 	coreconfig.InitViper(config, "orderer") // <1>
-	config.SetEnvPrefix(Prefix)
-	config.AutomaticEnv() // <2>
+	config.SetEnvPrefix(Prefix) // <2>
+	config.AutomaticEnv() // <3>
 	replacer := strings.NewReplacer(".", "_")
 	config.SetEnvKeyReplacer(replacer)
 
@@ -73,9 +73,12 @@ func Load() (*TopLevel, error) {
 }
 ----
 <1> 初始化一个 viper 实例，制定配置文件名字为 orderer
-<2> 自动读取 *环境变量*
+<2> 设置环境变量前缀，这里前缀是 *ORDERER*
+<3> 自动读取 *环境变量*
 
-==== 配置文件与环境变量的关系是怎样的呢
+==== 配置文件与环境变量的关系
+
+简单的说，*环境变量会覆盖配置文件中的配置项*，这样可以在不改变配置文件的前提下，做某些调整，非常方便，下面看下具体过程。
 
 进入 coreconfig.InitViper 内部 
 
@@ -122,6 +125,8 @@ func InitViper(v *viper.Viper, configName string) error {
 
 *FABRIC_CFG_PATH* 指定了配置文件所在的位置，若未指定，则为当前文件夹
 
+[TIP]
+====
 viper 支持的配置文件扩展名有 7 种
 
 .github.com/spf13/viper/viper.go
@@ -130,3 +135,49 @@ viper 支持的配置文件扩展名有 7 种
 // Universally supported extensions.
 var SupportedExts []string = []string{"json", "toml", "yaml", "yml", "properties", "props", "prop"}
 ----
+====
+
+orderer 读取的是 *orderer.yaml*，以 *GenesisMethod* 为例，来看一下配置文件和环境变量的关系
+
+配置文件中 GenesisMethod 的值是 provisional
+
+.orderer.yaml
+[source,yaml]
+----
+General:
+	...
+	GenesisMethod: provisional
+	...
+----
+
+环境变量配置中 GenesisMethod 的值是 file
+
+.环境变量配置
+[source,bash]
+----
+ORDERER_GENERAL_GENESISMETHOD=file
+----
+
+TIP: 环境变量命名规则 *前缀_项_子项_以此类推，大写*，orderer 配置文件的前缀是 orderer，General 的子项 GenesisMethod 按照规则来，就是 ORDERER_GENERAL_GENESISMETHOD
+
+fabric 会先读取配置文件的内容，然后在环境变量中找相应的配置项，如果存在，环境变量会覆盖掉配置文件中的项
+
+环境变量覆盖配置文件项的位置
+
+.github.com/spf13/viper/viper.go
+[source,go]
+----
+func (v *Viper) find(key string) interface{} {
+	...
+	if v.automaticEnvApplied { // <1>
+		// even if it hasn't been registered, if automaticEnv is used,
+		// check any Get request
+		if val = v.getEnv(v.mergeWithEnvPrefix(key)); val != "" {
+			jww.TRACE.Println(key, "found in environment with val:", val)
+			return val
+		}
+	}
+	...
+}
+----
+<1> v.automaticEnvApplied 在方法 config.AutomaticEnv() 中被设置为 true
