@@ -1,9 +1,0 @@
-:title: orderer
-:page-navtitle: orderer
-:chapter: 3
-:section: 4
-:page-section: {section}
-
-== orderer
-
-orderer 的入口在于 /orderer/main.go

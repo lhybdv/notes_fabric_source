@@ -1,0 +1,621 @@
+<!DOCTYPE html>
+<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
+    <head>
+        <meta charset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Overview</title>
+        <meta
+            name="description"
+            content="The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc."
+        />
+        <meta name="author" content="Your name goes here" />
+        <meta name="copyright" content="Maybe consider a Creative Commons license" />
+        <link rel="stylesheet" href="notes_fabric_source/css/foundation.css" />
+        <link rel="stylesheet" href="notes_fabric_source/css/font-awesome.css" />
+        <link rel="stylesheet" href="notes_fabric_source/css/asciidoctor.css" />
+        <link rel="stylesheet" href="notes_fabric_source/css/custom.css" />
+        <link rel="stylesheet" href="notes_fabric_source/css/prettify.min.css" />
+    </head>
+    <body>
+        <!-- Main Page Content and Sidebar -->
+
+        <!-- Sidebar -->
+
+        <div class="post with-summary">
+            <div class="post-summary">
+                <div class="search-container">
+                    <!-- <a href="/">fabric source</a> -->
+                    <input id="search_box" type="search" placeholder="Search..." />
+                    <i class="fa fa-search"></i>
+                </div>
+                <ul class="category">
+                    
+                </ul>
+            </div>
+
+            <!-- End Sidebar -->
+
+            <!-- Main Blog Content -->
+            <div class="post-body" role="content">
+                <div class="body-container">
+                    <div class="page-header">
+                        <a class="btn pull-left">
+                            <i class="fa fa-align-justify"></i>
+                        </a>
+                        <div class="project-title">
+                            <div class="project-title-inner">
+                                <a href="/">
+                                    fabric source
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="content-container">
+                        <div>
+                            <div id="content" class="page-inner">
+                                <div id="toc" class="toc">
+<div id="toctitle">Table of Contents</div>
+<ul class="sectlevel1">
+<li><a href="#概览">概览</a>
+<ul class="sectlevel2">
+<li><a href="#准备工作">准备工作</a></li>
+<li><a href="#步骤">步骤</a></li>
+<li><a href="#调试准备">调试准备</a>
+<ul class="sectlevel3">
+<li><a href="#第_1_步">第 1 步</a></li>
+<li><a href="#第_2_步">第 2 步</a></li>
+<li><a href="#第_3_步">第 3 步</a></li>
+<li><a href="#第_4_步">第 4 步</a></li>
+</ul>
+</li>
+<li><a href="#调试_orderer">调试 orderer</a></li>
+<li><a href="#调试_peer_start">调试 peer start</a></li>
+<li><a href="#调试_create_channel">调试 create channel</a></li>
+<li><a href="#调试_join_channel">调试 join channel</a></li>
+<li><a href="#调试_install_chaincode">调试 install chaincode</a></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="sect1">
+<h2 id="概览">概览</h2>
+<div class="sectionbody">
+<div class="sect2">
+<h3 id="准备工作">准备工作</h3>
+<div class="ulist">
+<ul>
+<li>
+<p>fabric 源码，fabric-samples 源码</p>
+</li>
+<li>
+<p>GoLand</p>
+</li>
+</ul>
+</div>
+</div>
+<div class="sect2">
+<h3 id="步骤">步骤</h3>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>用 GoLand 打开 fabric 源码</p>
+</li>
+<li>
+<p>新建 dev-network 目录</p>
+</li>
+<li>
+<p>把 sampleconfig 下的所有文件复制到 dev-network</p>
+</li>
+<li>
+<p>修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径)</p>
+</li>
+<li>
+<p>修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径)</p>
+</li>
+<li>
+<p>在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect2">
+<h3 id="调试准备">调试准备</h3>
+<div class="sect3">
+<h4 id="第_1_步">第 1 步</h4>
+<div class="paragraph">
+<p>点击菜单项 Run/Edit Configurations</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="notes_fabric_source/images/2019-06-25-14-03-43.png" alt="2019 06 25 14 03 43" width="500">
+</div>
+<div class="title">Figure 1. 点击菜单项 Run/Edit Configurations</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="第_2_步">第 2 步</h4>
+<div class="paragraph">
+<p>点击弹出窗口左上交的 + 按钮</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="notes_fabric_source/images/2019-06-25-14-09-37.png" alt="2019 06 25 14 09 37" width="500">
+</div>
+<div class="title">Figure 2. 弹出窗口左侧 + 按钮</div>
+</div>
+<div class="paragraph">
+<p>点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go Build</p>
+</div>
+<div class="imageblock">
+<div class="content">
+<img src="notes_fabric_source/images/2019-06-25-14-12-24.png" alt="2019 06 25 14 12 24" width="500">
+</div>
+<div class="title">Figure 3. configuration 的选项</div>
+</div>
+</div>
+<div class="sect3">
+<h4 id="第_3_步">第 3 步</h4>
+<div class="imageblock">
+<div class="content">
+<img src="notes_fabric_source/images/2019-06-25-14-53-49.png" alt="2019 06 25 14 53 49">
+</div>
+<div class="title">Figure 4. configuration 的具体设置</div>
+</div>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。</p>
+</li>
+<li>
+<p>Run kind 包括 Directory, Package, File 几种类型</p>
+</li>
+<li>
+<p>Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件</p>
+</li>
+<li>
+<p>Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 <strong>;</strong> 隔开</p>
+</li>
+<li>
+<p>Program arguments 是程序运行时需要的命令行参数</p>
+</li>
+</ol>
+</div>
+</div>
+<div class="sect3">
+<h4 id="第_4_步">第 4 步</h4>
+<div class="imageblock">
+<div class="content">
+<img src="notes_fabric_source/images/2019-06-26-10-44-50.png" alt="2019 06 26 10 44 50">
+</div>
+<div class="title">Figure 5. 创建好的 configurations</div>
+</div>
+<div class="paragraph">
+<p>选择一个 configuration，然后点击红色的按钮，即可开始调试</p>
+</div>
+</div>
+</div>
+<div class="sect2">
+<h3 id="调试_orderer">调试 orderer</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">入口位置</dt>
+<dd>
+<p>orderer/main.go main 函数</p>
+</dd>
+<dt class="hdlist1">Environment</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>ORDERER_GENERAL_LISTENADDRESS=0.0.0.0</p>
+</li>
+<li>
+<p>ORDERER_GENERAL_GENESISMETHOD=file</p>
+</li>
+<li>
+<p>ORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径)</p>
+</li>
+<li>
+<p>ORDERER_GENERAL_LOCALMSPID=DEFAULT</p>
+</li>
+<li>
+<p>ORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径)</p>
+</li>
+<li>
+<p>FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="调试_peer_start">调试 peer start</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">入口位置</dt>
+<dd>
+<p>peer/main.go main 函数</p>
+</dd>
+<dt class="hdlist1">Program arguments</dt>
+<dd>
+<p>node start --peer-chaincodedev=true</p>
+</dd>
+<dt class="hdlist1">Environment</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CORE_PEER_LOCALMSPID=DEFAULT</p>
+</li>
+<li>
+<p>CORE_PEER_ID=peer</p>
+</li>
+<li>
+<p>CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)</p>
+</li>
+<li>
+<p>CORE_PEER_ADDRESS=127.0.0.1:7051</p>
+</li>
+<li>
+<p>FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="调试_create_channel">调试 create channel</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">入口位置</dt>
+<dd>
+<p>peer/main.go main 函数</p>
+</dd>
+<dt class="hdlist1">Program arguments</dt>
+<dd>
+<p>channel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050
+　　</p>
+</dd>
+<dt class="hdlist1">Environment</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CORE_PEER_LOCALMSPID=DEFAULT</p>
+</li>
+<li>
+<p>CORE_PEER_ID=cli</p>
+</li>
+<li>
+<p>CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)</p>
+</li>
+<li>
+<p>CORE_PEER_ADDRESS=127.0.0.1:7051</p>
+</li>
+<li>
+<p>FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="调试_join_channel">调试 join channel</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">入口位置</dt>
+<dd>
+<p>peer/main.go main 函数</p>
+</dd>
+<dt class="hdlist1">Program arguments</dt>
+<dd>
+<p>channel join -b myc.block</p>
+</dd>
+<dt class="hdlist1">Environment</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CORE_PEER_LOCALMSPID=DEFAULT</p>
+</li>
+<li>
+<p>CORE_PEER_ID=cli</p>
+</li>
+<li>
+<p>CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)</p>
+</li>
+<li>
+<p>CORE_PEER_ADDRESS=127.0.0.1:7051</p>
+</li>
+<li>
+<p>FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+</div>
+<div class="sect2">
+<h3 id="调试_install_chaincode">调试 install chaincode</h3>
+<div class="dlist">
+<dl>
+<dt class="hdlist1">入口位置</dt>
+<dd>
+<p>peer/main.go main 函数</p>
+</dd>
+<dt class="hdlist1">Program arguments</dt>
+<dd>
+<p>chaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0
+　　</p>
+</dd>
+<dt class="hdlist1">Environment</dt>
+<dd>
+<div class="olist arabic">
+<ol class="arabic">
+<li>
+<p>CORE_PEER_LOCALMSPID=DEFAULT</p>
+</li>
+<li>
+<p>CORE_PEER_ID=cli</p>
+</li>
+<li>
+<p>CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)</p>
+</li>
+<li>
+<p>CORE_PEER_ADDRESS=127.0.0.1:7051</p>
+</li>
+<li>
+<p>FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)</p>
+</li>
+</ol>
+</div>
+</dd>
+</dl>
+</div>
+<div class="admonitionblock caution">
+<table>
+<tr>
+<td class="icon">
+<i class="fa icon-caution" title="Caution"></i>
+</td>
+<td class="content">
+其余部分待补充
+</td>
+</tr>
+</table>
+</div>
+</div>
+</div>
+</div>
+                            </div>
+                            <div id="search_result_container" class="page-inner">
+                                <ul id="search-results"></ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- End Main Content -->
+
+        <!-- End Main Content and Sidebar -->
+
+        <!-- Footer -->
+
+        <script src="notes_fabric_source/js/vendor/jquery.js"></script>
+        <script src="notes_fabric_source/js/foundation.min.js"></script>
+        <script src="notes_fabric_source/js/vendor/modernizr.js"></script>
+        <script src="notes_fabric_source/js/toc.js"></script>
+
+        <script src="notes_fabric_source/js/search/lunr.min.js"></script>
+        <script src="notes_fabric_source/js/search/lunr.stemmer.support.js"></script>
+        <script src="notes_fabric_source/js/search/tinyseg.js"></script>
+        <script src="notes_fabric_source/js/search/lunr.ja.js"></script>
+        <script src="notes_fabric_source/js/search/search.js"></script>
+        <script>
+            $(document).foundation();
+            var doc = document.documentElement;
+            doc.setAttribute("data-useragent", navigator.userAgent);
+
+            var host = window.location.host;
+            var wholeHref = window.location.href;
+
+            var href = wholeHref
+                .replace("https://", "")
+                .replace("http://", "")
+                .replace(host, "");
+
+            var list = $(".post > li > a");
+            list.each(function() {
+                if ($(this).attr("href") === href) {
+                    $(this).addClass("active");
+                    return false;
+                }
+            });
+
+            $(".btn.pull-left").click(function() {
+                var $post = $(".post");
+                if ($post.hasClass("with-summary")) {
+                    $(".post-summary").animate({ left: "-300px" }, "slow");
+                    $(".post-body").animate({ left: 0 }, "slow", function() {
+                        $post.removeClass("with-summary");
+                    });
+                    $(".page-header").animate({left:0}, "slow")
+                } else {
+                    $(".post-summary").animate({ left: 0 }, "slow");
+                    $(".post-body").animate({ left: "300px" }, "slow");
+                    $post.addClass("with-summary");
+                    $(".page-header").animate({left: "300px"}, "slow")
+                }
+            });
+
+            window.store = {
+                
+                    "allposts-all-cap": {
+                        "title": "",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto",
+                        "url": "/allposts/all/cap"
+                    }
+                    ,
+                
+                    "allposts-debug-orderer-genesisblock": {
+                        "title": "orderer genesisblock",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: orderer-genesisblock// :toc: true// :toclevels: 4:page-navtitle: orderer genesisblock:chapter: 2:section: 3:page-section: {section}== orderer genesisblock./orderer/common/server/main.go[source,go]----func Start(cmd string, conf *localconfig.TopLevel) {\tbootstrapBlock := extractBootstrapBlock(conf) //     ...\tlf, _ := createLedgerFactory(conf, metricsProvider) //     ...    manager := initializeMultichannelRegistrar(clusterBootBlock, r, clusterDialer, clusterServerConfig, clusterGRPCServer, conf, signer, metricsProvider, opsSystem, lf, tlsCallback) // }---- 读取创世块信息 创建账本文件夹 创建默认 channel=== 读取创世块信息./orderer/common/server/main.go[source,go]----func extractBootstrapBlock(conf *localconfig.TopLevel) *cb.Block {\tvar bootstrapBlock *cb.Block\t// Select the bootstrapping mechanism\tswitch conf.General.GenesisMethod {\tcase \"provisional\":\t\tbootstrapBlock = encoder.New(genesisconfig.Load(conf.General.GenesisProfile)).GenesisBlockForChannel(conf.General.SystemChannel)\tcase \"file\":\t\tbootstrapBlock = file.New(conf.General.GenesisFile).GenesisBlock() // \tdefault:\t\tlogger.Panic(\"Unknown genesis method:\", conf.General.GenesisMethod)\t}\treturn bootstrapBlock}---- 读取了配置项 *General.GenesisFile* 所指定的文件的内容=== 创建账本文件夹./orderer/common/server/util.go[source,go]----func createLedgerFactory(conf *config.TopLevel, metricsProvider metrics.Provider) (blockledger.Factory, string) {\tvar lf blockledger.Factory\tvar ld string\tswitch conf.General.LedgerType {\tcase \"file\":\t\tld = conf.FileLedger.Location //         ...        lf = fileledger.New(ld, metricsProvider) //         ...\t\tcreateSubDir(ld, fsblkstorage.ChainsDir) //     ...}---- 读取了配置项 FileLedger.Location 按 FileLedger.Location 的值，创建了文件夹，并在其下创建了一个 leveldb 的数据库 *index* 在 FileLedger.Location 下面创建了 channel 的父文件夹 *chains*=== 创建默认 channel",
+                        "url": "/allposts/debug/orderer-genesisblock"
+                    }
+                    ,
+                
+                    "allposts-debug-create-channel": {
+                        "title": "create channel",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: create channel:page-navtitle: create channel:chapter: 2:section: 4:page-section: {section}== create channel=== 命令 peer channel create命令如下[source,bash]----peer channel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050 ----TIP: channel 是 peer 的子命令，create 是 channel 的子命令create channel 是 peer 节点执行的命令，入口处在 /peer/main.go./peer/main.go[source,go]----func main() {\t...\tmainCmd.AddCommand(channel.Cmd(nil)) // \t...}---- 为 mainCmd 添加了 channel 子命令 [TIP]====mainCmd 就是 *peer*[source,go]----var mainCmd = &cobra.Command{\tUse: \"peer\"}----====channel 里面什么样呢./peer/channel/channel.go[source,go]----func Cmd(cf *ChannelCmdFactory) *cobra.Command {\t...\tchannelCmd.AddCommand(createCmd(cf)) // \t...}---- 添加了 *create* 子命令createCmd 里面./peer/channel/create.go[source,go]----func createCmd(cf *ChannelCmdFactory) *cobra.Command {\tcreateCmd := &cobra.Command{\t\tUse:   \"create\",\t\tShort: \"Create a channel\",\t\tLong:  \"Create a channel and write the genesis block to a file.\",\t\tRunE: func(cmd *cobra.Command, args []string) error {\t\t\treturn create(cmd, args, cf) // \t\t},\t}\tflagList := []string{\t\t\"channelID\",\t\t\"file\",\t\t\"outputBlock\",\t\t\"timeout\",\t}\tattachFlags(createCmd, flagList)\treturn createCmd}---- create channel 实际执行的是 *create* 方法./peer/channel/create.go[source,go]----func create(cmd *cobra.Command, args []string, cf *ChannelCmdFactory) error {\t...\tif cf == nil {\t\tcf, err = InitCmdFactory(EndorserNotRequired, PeerDeliverNotRequired, OrdererRequired) // \t\t...\t}\treturn executeCreate(cf)}---- 创建了一个 *ChannelCmdFactory* 对象看一下 *ChannelCmdFactory* 结构 ./peer/channel/channel.go[source,go]----type ChannelCmdFactory struct {\tEndorserClient   pb.EndorserClient\tSigner           msp.SigningIdentity\tBroadcastClient  common.BroadcastClient // \tDeliverClient    deliverClientIntf\tBroadcastFactory BroadcastClientFactory // }---- BroadcastClient 用来通信 BroadcastFactory 是一个方法，用来得到 BroadcastClient 对象./peer/common/broadcastclient.go[source,go]----type BroadcastClient interface { // \tSend(env *cb.Envelope) error\tClose() error}type broadcastClient struct { // \tclient ab.AtomicBroadcast_BroadcastClient // }...func (s *broadcastClient) Send(env *cb.Envelope) error {\t...}func (s *broadcastClient) Close() error {\t...}---- BroadcastClient 接口 broadcastClient 实现了 BroadcastClient 接口 真正完成 Send, Close 动作的是 ab.AtomicBroadcast_BroadcastClient=== gRPC 的使用==== AtomicBroadcast/protos/orderer/ab.proto 文件定义了 AtomicBroadcast 的原型.protos/orderer/ab.proto[source,pb]----...service AtomicBroadcast {    rpc Broadcast(stream common.Envelope) returns (stream BroadcastResponse) {}    rpc Deliver(stream common.Envelope) returns (stream DeliverResponse) {}}----==== AtomicBroadcastClient/protos/orderer/ab.proto 经过 gPRC 编译后得到 /protos/orderer/ab.pb.go，里面包括 2 个部分  *AtomicBroadcastClient*，*AtomicBroadcastServer*，这里先看 *AtomicBroadcastClient*./protos/orderer/ab.pb.go[source,go]----type AtomicBroadcastClient interface { // \tBroadcast(ctx context.Context, opts ...grpc.CallOption) (AtomicBroadcast_BroadcastClient, error)\tDeliver(ctx context.Context, opts ...grpc.CallOption) (AtomicBroadcast_DeliverClient, error)}type atomicBroadcastClient struct { // \tcc *grpc.ClientConn}func NewAtomicBroadcastClient(cc *grpc.ClientConn) AtomicBroadcastClient { // \treturn &atomicBroadcastClient{cc}}func (c *atomicBroadcastClient) Broadcast(ctx context.Context, opts ...grpc.CallOption) (AtomicBroadcast_BroadcastClient, error) {\t...}type AtomicBroadcast_BroadcastClient interface { // \tSend(*common.Envelope) error\tRecv() (*BroadcastResponse, error)\tgrpc.ClientStream}type atomicBroadcastBroadcastClient struct { // \tgrpc.ClientStream}func (x *atomicBroadcastBroadcastClient) Send(m *common.Envelope) error {\t...}func (x *atomicBroadcastBroadcastClient) Recv() (*BroadcastResponse, error) {\t...}---- AtomicBroadcastClient 接口 atomicBroadcastClient 实现了 AtomicBroadcastClient 接口 创建一个 atomicBroadcastClient 实例 AtomicBroadcast_BroadcastClient 接口是针对 AtomicBroadcastClient 中的 Broadcast 动作的客户端 atomicBroadcastBroadcastClient 实现了 AtomicBroadcast_BroadcastClient 接口NOTE: AtomicBroadcast_DeliverClient 也是有的，与 AtomicBroadcast_BroadcastClient 类似，不再缀述 ==== OrdererClient./peer/common/ordererclient.go[source,go]----type OrdererClient struct { // \tcommonClient}func NewOrdererClientFromEnv() (*OrdererClient, error) { // \taddress, override, clientConfig, err := configFromEnv(\"orderer\") // \t...}func (oc *OrdererClient) Broadcast() (ab.AtomicBroadcast_BroadcastClient, error) {\t...}func (oc *OrdererClient) Deliver() (ab.AtomicBroadcast_DeliverClient, error) {\t...}---- OrdererClient 实现了 AtomicBroadcastClient 接口 NewOrdererClientFromEnv 创建了一 OrdererClient 实例 获取了关于 orderer 的配置，如地址，超时时间等前面提到过 InitCmdFactory 方法./peer/chaincode/common.go[source,go]----func InitCmdFactory(cmdName string, isEndorserRequired, isOrdererRequired bool) (*ChaincodeCmdFactory, error) {\t...\tif isOrdererRequired {\t\t...\t\tbroadcastClient, err = common.GetBroadcastClientFnc()\t\t...\t}\t...}----./peer/chaincode/common.go[source,go]----func init() {\t...\tGetBroadcastClientFnc = GetBroadcastClient\t...}----./peer/common/broadcastclient.go[source,go]----func GetBroadcastClient() (BroadcastClient, error) {\toc, err := NewOrdererClientFromEnv() // \t...}---- 调用了 OrdererClient 中的 NewOrdererClientFromEnv 方法==== 消息的发出.peer/channel/create.go[source,go]----func sendCreateChainTransaction(cf *ChannelCmdFactory) error {\t...\tdefer broadcastClient.Close()\terr = broadcastClient.Send(chCrtEnv) // \treturn err}---- broadcastClient.Send 方法实际上调用了 gRPC，从 peer 节点发送消息给了 orderer 服务==== AtomicBroadcastServer./protos/orderer/ab.pb.go[source,go]----type AtomicBroadcastServer interface {\tBroadcast(AtomicBroadcast_BroadcastServer) error\tDeliver(AtomicBroadcast_DeliverServer) error}func RegisterAtomicBroadcastServer(s *grpc.Server, srv AtomicBroadcastServer) { // \ts.RegisterService(&_AtomicBroadcast_serviceDesc, srv)}func _AtomicBroadcast_Broadcast_Handler(srv interface{}, stream grpc.ServerStream) error {\treturn srv.(AtomicBroadcastServer).Broadcast(&atomicBroadcastBroadcastServer{stream}) // }...var _AtomicBroadcast_serviceDesc = grpc.ServiceDesc{\tServiceName: \"orderer.AtomicBroadcast\",\tHandlerType: (*AtomicBroadcastServer)(nil),\tMethods:     []grpc.MethodDesc{},\tStreams: []grpc.StreamDesc{\t\t{\t\t\tStreamName:    \"Broadcast\",\t\t\tHandler:       _AtomicBroadcast_Broadcast_Handler, \t\t\tServerStreams: true,\t\t\tClientStreams: true,\t\t},\t\t{\t\t\tStreamName:    \"Deliver\",\t\t\tHandler:       _AtomicBroadcast_Deliver_Handler,\t\t\tServerStreams: true,\t\t\tClientStreams: true,\t\t},\t},\tMetadata: \"orderer/ab.proto\",}---- 注册 server 的方法 指定 Broadcast 的消息由 _AtomicBroadcast_Broadcast_Handler 方法来处理 真正处理消息的是 被注册的 server 对象的 Broadcast 方法./orderer/common/server/main.go[source,go]----func Start(cmd string, conf *localconfig.TopLevel) {\t...\tab.RegisterAtomicBroadcastServer(grpcServer.Server(), server) // \t...}---- 注册了 server这里的 server ./orderer/common/server/server.go[source,go]----type server struct { // \tbh    *broadcast.Handler\tdh    *deliver.Handler\tdebug *localconfig.Debug\t*multichannel.Registrar}...func (s *server) Broadcast(srv ab.AtomicBroadcast_BroadcastServer) error {\tlogger.Debugf(\"Starting new Broadcast handler\")\tdefer func() {\t\tif r := recover(); r != nil {\t\t\tlogger.Criticalf(\"Broadcast client triggered panic: %s\\n%s\", r, debug.Stack())\t\t}\t\tlogger.Debugf(\"Closing Broadcast stream\")\t}()\treturn s.bh.Handle(&broadcastMsgTracer{ // \t\tAtomicBroadcast_BroadcastServer: srv,\t\tmsgTracer: msgTracer{\t\t\tdebug:    s.debug,\t\t\tfunction: \"Broadcast\",\t\t},\t})}// Deliver sends a stream of blocks to a client after orderingfunc (s *server) Deliver(srv ab.AtomicBroadcast_DeliverServer) error {\t...}---- server 实现了 AtomicBroadcastServer 接口 实际处理 client 端发出的强求的方法Handle 方法./orderer/common/broadcast/broadcast.go[source,go]----func (bh *Handler) Handle(srv ab.AtomicBroadcast_BroadcastServer) error {\t...\tfor {\t\t...\t\tresp := bh.ProcessMessage(msg, addr) // \t\t...\t}}---- 处理消息=== solo ==== 处理消息的方法./orderer/common/broadcast/broadcast.go[source,go]----func (bh *Handler) ProcessMessage(msg *cb.Envelope, addr string) (resp *ab.BroadcastResponse) {\t...\tif !isConfig {\t\t...\t\terr = processor.Order(msg, configSeq)\t\t...\t} else { // isConfig\t\t...\t\terr = processor.Configure(config, configSeq)\t\t...\t}\t...}----==== processorprocessor 实际上是一个 Consenter 接口的实现./orderer/common/broadcast/broadcast.go[source,go]----type Consenter interface {\tOrder(env *cb.Envelope, configSeq uint64) error\tConfigure(config *cb.Envelope, configSeq uint64) error\tWaitReady() error}----此处实际工作的是 /orderer/consensus/solo/consensus.go 中的 chain./orderer/consensus/solo/consensus.go[source,go]----type chain struct { // \tsupport  consensus.ConsenterSupport\tsendChan chan *message\texitChan chan struct{}}...func (ch *chain) WaitReady() error {\treturn nil}func (ch *chain) Order(env *cb.Envelope, configSeq uint64) error {\tselect {\tcase ch.sendChan \t\tconfigSeq: configSeq,\t\tnormalMsg: env,\t}:\t\treturn nil\tcase \t\tconfigSeq: configSeq,\t\tconfigMsg: config,\t}:\t\treturn nil\tcase  chain 实现了 Consenter 接口 Order 方法内部向 sendChan 发消息 Configure 方法内部向 sendChan 发消息处理消息的是 main 方法./orderer/consensus/solo/consensus.go[source,go]----func (ch *chain) main() {\t...\tfor {\t\tseq := ch.support.Sequence()\t\terr = nil\t\tselect {\t\tcase msg := \t\t\t...\t\tcase  sendChan 收到消息时，处理==== 为什么使用的是 solo 呢./orderer/common/server/main.go[source,go]----func Start(cmd string, conf *localconfig.TopLevel) {\t...\tmanager := initializeMultichannelRegistrar(clusterBootBlock, r, clusterDialer, clusterServerConfig, clusterGRPCServer, conf, signer, metricsProvider, opsSystem, lf, tlsCallback)\t...}...func initializeMultichannelRegistrar(\tbootstrapBlock *cb.Block,\tri *replicationInitiator,\tclusterDialer *cluster.PredicateDialer,\tsrvConf comm.ServerConfig,\tsrv *comm.GRPCServer,\tconf *localconfig.TopLevel,\tsigner crypto.LocalSigner,\tmetricsProvider metrics.Provider,\thealthChecker healthChecker,\tlf blockledger.Factory,\tcallbacks ...channelconfig.BundleActor,) *multichannel.Registrar {\tgenesisBlock := extractBootstrapBlock(conf)\t...\tconsenters := make(map[string]consensus.Consenter)\tregistrar := multichannel.NewRegistrar(lf, signer, metricsProvider, callbacks...)\tconsenters[\"solo\"] = solo.New() // \tvar kafkaMetrics *kafka.Metrics\tconsenters[\"kafka\"], kafkaMetrics = kafka.New(conf.Kafka, metricsProvider, healthChecker) // \t...\tregistrar.Initialize(consenters)\treturn registrar}---- 创建 solo 共识器 创建 kafka 共识器./orderer/common/multichannel/registrar.go[source,go]----func (r *Registrar) Initialize(consenters map[string]consensus.Consenter) {\tr.consenters = consenters\texistingChains := r.ledgerFactory.ChainIDs()\tfor _, chainID := range existingChains {\t\t...\t\tif _, ok := ledgerResources.ConsortiumsConfig(); ok {\t\t\t...\t\t\tchain := newChainSupport( // \t\t\t\tr,\t\t\t\tledgerResources,\t\t\t\tr.consenters,\t\t\t\tr.signer,\t\t\t\tr.blockcutterMetrics,\t\t\t)\t\t\t...\t\t} else {\t\t\t...\t\t}\t}\t...}---- 调用 newChainSupport 方法./orderer/common/multichannel/chainsupport.go[source,go]----func newChainSupport(\tregistrar *Registrar,\tledgerResources *ledgerResources,\tconsenters map[string]consensus.Consenter,\tsigner crypto.LocalSigner,\tblockcutterMetrics *blockcutter.Metrics,) *ChainSupport {\t...\tconsenterType := ledgerResources.SharedConfig().ConsensusType() // \tconsenter, ok := consenters[consenterType] // \t...}---- 获取 共识器 类型，这里实际的值是 solo 根据 共识器 类型来决定使用哪种共识器",
+                        "url": "/allposts/debug/create-channel"
+                    }
+                    ,
+                
+                    "allposts-source-orderer": {
+                        "title": "orderer",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: orderer:page-navtitle: orderer:chapter: 3:section: 4:page-section: {section}== ordererorderer 的入口在于 /orderer/main.go",
+                        "url": "/allposts/source/orderer"
+                    }
+                    ,
+                
+                    "allposts-debug-orderer-config": {
+                        "title": "orderder 配置",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: orderer-config// :toc: true// :toclevels: 4:page-navtitle: orderder 配置:chapter: 2:section: 2:page-section: {section}== orderer 配置orderer 启动时，从 /orderer/main.go 入口./orderer/main.go[source,go]----func main() {\tserver.Main()}----调用的是 ./orderer/common/server/main.go./orderer/common/server/main.go[source,go]----func Main() {\tfullCmd := kingpin.MustParse(app.Parse(os.Args[1:]))\t// \"version\" command\tif fullCmd == version.FullCommand() {\t\tfmt.Println(metadata.GetVersionInfo())\t\treturn\t}\tconf, err := localconfig.Load() // \tif err != nil {\t\tlogger.Error(\"failed to parse config: \", err)\t\tos.Exit(1)\t}\tinitializeLogging()\tinitializeLocalMsp(conf)\tprettyPrintStruct(conf)\tStart(fullCmd, conf)}---- 加载配置=== 加载配置./orderer/common/localconfig/config.go[source,go]----func Load() (*TopLevel, error) {\tconfig := viper.New()\tcoreconfig.InitViper(config, \"orderer\") // \tconfig.SetEnvPrefix(Prefix) // \tconfig.AutomaticEnv() // \treplacer := strings.NewReplacer(\".\", \"_\")\tconfig.SetEnvKeyReplacer(replacer)\tif err := config.ReadInConfig(); err != nil {\t\treturn nil, fmt.Errorf(\"Error reading configuration: %s\", err)\t}\tvar uconf TopLevel\tif err := viperutil.EnhancedExactUnmarshal(config, &uconf); err != nil {\t\treturn nil, fmt.Errorf(\"Error unmarshaling config into struct: %s\", err)\t}\tuconf.completeInitialization(filepath.Dir(config.ConfigFileUsed()))\treturn &uconf, nil}---- 初始化一个 viper 实例，制定配置文件名字为 orderer 设置环境变量前缀，这里前缀是 *ORDERER* 自动读取 *环境变量*==== 配置文件与环境变量的关系简单的说，*环境变量会覆盖配置文件中的配置项*，这样可以在不改变配置文件的前提下，做某些调整，非常方便，下面看下具体过程。进入 coreconfig.InitViper 内部 ./core/config/config.go[source,go]----func InitViper(v *viper.Viper, configName string) error {\tvar altPath = os.Getenv(\"FABRIC_CFG_PATH\") // \tif altPath != \"\" {\t\t// If the user has overridden the path with an envvar, its the only path\t\t// we will consider\t\tif !dirExists(altPath) {\t\t\treturn fmt.Errorf(\"FABRIC_CFG_PATH %s does not exist\", altPath)\t\t}\t\tAddConfigPath(v, altPath)\t} else {\t\t// If we get here, we should use the default paths in priority order:\t\t//\t\t// *) CWD\t\t// *) /etc/hyperledger/fabric\t\t// CWD\t\tAddConfigPath(v, \"./\")\t\t// And finally, the official path\t\tif dirExists(OfficialPath) {\t\t\tAddConfigPath(v, OfficialPath)\t\t}\t}\t// Now set the configuration file.\tif v != nil {\t\tv.SetConfigName(configName)\t} else {\t\tviper.SetConfigName(configName)\t}\treturn nil}---- 获取环境变量 *FABRIC_CFG_PATH* 的值*FABRIC_CFG_PATH* 指定了配置文件所在的位置，若未指定，则为当前文件夹[TIP]====viper 支持的配置文件扩展名有 7 种.github.com/spf13/viper/viper.go[source,go]----// Universally supported extensions.var SupportedExts []string = []string{\"json\", \"toml\", \"yaml\", \"yml\", \"properties\", \"props\", \"prop\"}----====orderer 读取的是 *orderer.yaml*，以 *GenesisMethod* 为例，来看一下配置文件和环境变量的关系配置文件中 GenesisMethod 的值是 provisional.orderer.yaml[source,yaml]----General:\t...\tGenesisMethod: provisional\t...----环境变量配置中 GenesisMethod 的值是 file.环境变量配置[source,bash]----ORDERER_GENERAL_GENESISMETHOD=file----TIP: 环境变量命名规则 *前缀_项_子项_以此类推，大写*，orderer 配置文件的前缀是 orderer，General 的子项 GenesisMethod 按照规则来，就是 ORDERER_GENERAL_GENESISMETHODfabric 会先读取配置文件的内容，然后在环境变量中找相应的配置项，如果存在，环境变量会覆盖掉配置文件中的项环境变量覆盖配置文件项的位置.github.com/spf13/viper/viper.go[source,go]----func (v *Viper) find(key string) interface{} {\t...\tif v.automaticEnvApplied { // \t\t// even if it hasn't been registered, if automaticEnv is used,\t\t// check any Get request\t\tif val = v.getEnv(v.mergeWithEnvPrefix(key)); val != \"\" {\t\t\tjww.TRACE.Println(key, \"found in environment with val:\", val)\t\t\treturn val\t\t}\t}\t...}---- v.automaticEnvApplied 在方法 config.AutomaticEnv() 中被设置为 true",
+                        "url": "/allposts/debug/orderer-config"
+                    }
+                    ,
+                
+                    "allposts-third-lib-kingpin": {
+                        "title": "kingpin",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: kingpin:toc: true:toclevels: 4:page-navtitle: kingpin:chapter: 4:section: 2:page-section: {section}== kingpinkingpin 是命令行的参数，Flag 的 parser=== 示例 1.源码 1[source,go]----package mainimport (    \"fmt\"    \"gopkg.in/alecthomas/kingpin.v2\")var (    debug   = kingpin.Flag(\"debug\", \"Enable debug mode.\").Bool()    timeout = kingpin.Flag(\"timeout\", \"Timeout waiting for ping.\").Default(\"5s\").OverrideDefaultFromEnvar(\"PING_TIMEOUT\").Short('t').Duration()    ip      = kingpin.Arg(\"ip\", \"IP address to ping.\").Required().IP()    count   = kingpin.Arg(\"count\", \"Number of packets to send\").Int())func main() {    kingpin.Version(\"0.0.1\")    kingpin.Parse()    fmt.Printf(\"Would ping: %s with timeout %s and count %d\\n\", *ip, *timeout, *count)}----.效果 1[source,bash]----$ ping --helpusage: ping []  []Flags:  --debug            Enable debug mode.  --help             Show help.  -t, --timeout=5s   Timeout waiting for ping.Args:          IP address to ping.  []   Number of packets to send$ ping 1.2.3.4 5Would ping: 1.2.3.4 with timeout 5s and count 5----=== 示例 2.源码 2[source,go][source,go]----package mainimport (    \"os\"    \"strings\"    \"gopkg.in/alecthomas/kingpin.v2\")var (    app      = kingpin.New(\"chat\", \"A command-line chat application.\")    debug    = app.Flag(\"debug\", \"Enable debug mode.\").Bool()    serverIP = app.Flag(\"server\", \"Server address.\").Default(\"127.0.0.1\").IP()    register     = app.Command(\"register\", \"Register a new user.\")    registerNick = register.Arg(\"nick\", \"Nickname for user.\").Required().String()    registerName = register.Arg(\"name\", \"Name of user.\").Required().String()    post        = app.Command(\"post\", \"Post a message to a channel.\")    postImage   = post.Flag(\"image\", \"Image to post.\").File()    postChannel = post.Arg(\"channel\", \"Channel to post to.\").Required().String()    postText    = post.Arg(\"text\", \"Text to post.\").Strings())func main() {    switch kingpin.MustParse(app.Parse(os.Args[1:])) {    // Register user    case register.FullCommand():        println(*registerNick)    // Post message    case post.FullCommand():        if *postImage != nil {        }        text := strings.Join(*postText, \" \")        println(\"Post:\", text)    }}----.效果 2[source,bash]----$ chat --helpusage: chat []  [] [ ...]A command-line chat application.Flags:  --help              Show help.  --debug             Enable debug mode.  --server=127.0.0.1  Server address.Commands:  help []    Show help for a command.  register      Register a new user.  post []  []    Post a message to a channel.$ chat help postusage: chat [] post []  []Post a message to a channel.Flags:  --image=IMAGE  Image to post.Args:    Channel to post to.  []   Text to post.$ chat post --image=~/Downloads/owls.jpg pics...----",
+                        "url": "/allposts/third-lib/kingpin"
+                    }
+                    ,
+                
+                    "allposts-third-lib-jww": {
+                        "title": "jww",
+                        "author": "",
+                        "category": "",
+                        "content": ":page-layout: _auto:title: jww:toc: true:page-navtitle: jww:chapter: 4:section: 1:page-section: {section}== jwwjww 全称 jwalterweatherman，源码在 https://github.com/spf13/jwalterweatherman[github]=== 特点. 可同时进行 terminal 输出 和 日志记录. 可分别进行级别控制=== 级别. TRACE. DEBUG. INFO. WARN. ERROR. CRITICAL. FATAL[source,go,indent=0]----const (\tLevelTrace Threshold = iota\tLevelDebug\tLevelInfo\tLevelWarn\tLevelError\tLevelCritical\tLevelFatal)----通过源码可以看到，级别是个枚举，其对应的数值由 0 至 6 逐渐增大。 默认情况下:. Trace, Debug, Info 对应的是 devNull，即被忽略. Warn 及以上，会被写入日志(如果提供了日志文件的话). Error 及以上会被打印到 terminal[TIP]====devNull 是什么?.devNull 的部分代码[source,go]----type devNull intfunc (devNull) Write(p []byte) (int, error) {\treturn len(p), nil}----从代码可以看出，devNull 是 io.Writer 的实现，其 Write 方法内部没有做任何 *写* 的操作，从而达到了 *忽略* 的效果======= 示例.github.com/spf13/viper/util.go[source,go,]----func absPathify(inPath string) string {\tjww.INFO.Println(\"Trying to resolve absolute path to\", inPath) // \tif strings.HasPrefix(inPath, \"$HOME\") {\t\tinPath = userHomeDir() + inPath[5:]\t}\tif strings.HasPrefix(inPath, \"$\") {\t\tend := strings.Index(inPath, string(os.PathSeparator))\t\tinPath = os.Getenv(inPath[1:end]) + inPath[end:]\t}\tif filepath.IsAbs(inPath) {\t\treturn filepath.Clean(inPath)\t}\tp, err := filepath.Abs(inPath)\tif err == nil {\t\treturn filepath.Clean(p)\t} else {\t\tjww.ERROR.Println(\"Couldn't discover absolute path\") // \t\tjww.ERROR.Println(err) \t}\treturn \"\"}---- INFO 级别 ERROR 级别 ERROR 级别=== 意义是什么?以 viper 这个库为例，如果\b不做级别设置，那么日志只记录 Warn 及以上级别的信息，terminal 只输出 Error 及以上级别的信息，换言之，是有了一定的错误的时候。但是如果我们代码中，在使用 viper 的时候，出现了问题，我们想知道更多细节，就可以打出更多级别的消息。比如:[source,go]----jww.SetStdoutThreshold(jww.LevelTrace) // jww.SetLogThreshold(jww.LevelTrace) // ---- 设置 terminal 输出级别为 Trace 设置 log 输出级别为 Trace这样，就可以打印出所有消息，*按需输出*，这种方式很灵活。",
+                        "url": "/allposts/third-lib/jww"
+                    }
+                    ,
+                
+                    "allposts-all-head": {
+                        "title": "",
+                        "author": "Liuhuiyu",
+                        "category": "",
+                        "content": ":page-layout: _auto= fabric 学习笔记Liuhuiyu ",
+                        "url": "/allposts/all/head"
+                    }
+                    ,
+                
+                    "allposts-all-all": {
+                        "title": "",
+                        "author": "Liuhuiyu",
+                        "category": "",
+                        "content": ":page-layout: _autoinclude::2019-06-24-head.adoc[]include::../../principle/_posts/2019-06-18-workflow.adoc[]include::../../debug/_posts/2019-06-21-overview.adoc[]include::../../debug/_posts/2019-07-04-orderer-config.adoc[]include::../../debug/_posts/2019-07-09-create-channel.adoc[]include::../../debug/_posts/2019-07-09-orderer-genesisblock.adoc[]include::../../source/_posts/2019-06-19-abbreviation.adoc[]include::../../source/_posts/2019-06-19-directory.adoc[]include::../../source/_posts/2019-06-19-peer.adoc[]include::../../third-lib/_posts/2019-06-26-jww.adoc[]include::../../third-lib/_posts/2019-06-27-kingpin.adoc[]",
+                        "url": "/allposts/all/all"
+                    }
+                    ,
+                
+                    "allposts-debug-overview": {
+                        "title": "概览",
+                        "author": "",
+                        "category": "",
+                        "content": "Table of Contents概览准备工作步骤调试准备第 1 步第 2 步第 3 步第 4 步调试 orderer调试 peer start调试 create channel调试 join channel调试 install chaincode概览准备工作fabric 源码，fabric-samples 源码GoLand步骤用 GoLand 打开 fabric 源码新建 dev-network 目录把 sampleconfig 下的所有文件复制到 dev-network修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径)修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径)在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block调试准备第 1 步点击菜单项 Run/Edit ConfigurationsFigure 1. 点击菜单项 Run/Edit Configurations第 2 步点击弹出窗口左上交的 + 按钮Figure 2. 弹出窗口左侧 + 按钮点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go BuildFigure 3. configuration 的选项第 3 步Figure 4. configuration 的具体设置Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。Run kind 包括 Directory, Package, File 几种类型Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 ; 隔开Program arguments 是程序运行时需要的命令行参数第 4 步Figure 5. 创建好的 configurations选择一个 configuration，然后点击红色的按钮，即可开始调试调试 orderer入口位置orderer/main.go main 函数EnvironmentORDERER_GENERAL_LISTENADDRESS=0.0.0.0ORDERER_GENERAL_GENESISMETHOD=fileORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径)ORDERER_GENERAL_LOCALMSPID=DEFAULTORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径)FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)调试 peer start入口位置peer/main.go main 函数Program argumentsnode start --peer-chaincodedev=trueEnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=peerCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 create channel入口位置peer/main.go main 函数Program argumentschannel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050　　EnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 join channel入口位置peer/main.go main 函数Program argumentschannel join -b myc.blockEnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 install chaincode入口位置peer/main.go main 函数Program argumentschaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0　　EnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)其余部分待补充",
+                        "url": "/allposts/debug/overview"
+                    }
+                    ,
+                
+                    "allposts-source-peer": {
+                        "title": "peer",
+                        "author": "",
+                        "category": "",
+                        "content": "Table of ContentspeerpeerFigure 1. peer 命令结构",
+                        "url": "/allposts/source/peer"
+                    }
+                    ,
+                
+                    "allposts-source-directory": {
+                        "title": "目录",
+                        "author": "",
+                        "category": "",
+                        "content": "Table of Contents目录目录Table 1. 目录bcssp加密服务代码目录common全局公用代码目录core核心功能代码目录docs以.rst文件为核心，可编译生成文档。说明文档的目录events事件代码目录，用于生产和消费信息examples示例目录gossip本意是绯闻的意思，是一种可达到去中心化，有一定容错能力且可达到最终一致的传播算法msp会员服务代码目录orderer就理解成orderer目录就好，orderer也算是区域链中的专用名词，用于消息的订阅与分发处理protos原型目录，定义个各种原型和生成的对应的XXX.pb.go源码vendor原意是商贩，在此就是存放go中使用的全部的各种第三方包来源于网络，待整理确认",
+                        "url": "/allposts/source/directory"
+                    }
+                    ,
+                
+                    "allposts-source-abbreviation": {
+                        "title": "缩写",
+                        "author": "",
+                        "category": "",
+                        "content": "Table of Contents缩写缩写Table 1. 缩写缩写描述MSPMembership service provider 会员服务提供者BCCSPblockchain（前两个字母BC） cryptographic service provider 区域链加密服务提供者abatomic broadcast原子（操作）广播lscclifecycle(L) system(S) chaincode（CC）生命周期系统链码SpecSpecification，规格标准，详细说明KVkey-value 键-值CDSChaincodeDeploymentSpecCISChaincodeInvocationSpecmgmtmanagementSWsoftware-basedABAtomicBroadcastGBgenesis block，创世纪的block，也就是区域链中的第一个块CC或ccchaincodeSCC或sccsystem chaincodecsccconfiger system chaincodelscclifecycle system chaincodeesccendorser system chaincodevsccvalidator system chaincodeqsccquerier system chaincodealgalgorithm 算法mcsmspMessageCryptoServicemock假装，学样子，模仿的意思，基本上是服务于xxx_test.go的，即用于测试的Gossip一种使分布结点达到状态最终一致的算法attrattributeFsBlockStorefile system block storevdbversioned database 也就是状态数据库RTEnvruntime environment运行环境pkcs11pcks#11，一种公匙加密标准，有一套叫做Cryptoki的接口，是一组平台设备无关的APIMCSmspMessageCryptoService，消息加密服务saSecurityAdvisorimplimplement，好多处XXX.go和XXXimpl.go是对应的，前者是用于接口或者定义的，后者是实现该接口或定义的FSMfinite state machine 有限状态机FSfilesystem 文件系统blkblockclicommand line interface 命令行界面CFGFABRIC_CFG_PATH中的，应该是config的意思mgrmanagercpinfocheckpoint information，检查点信息DevModedevelopment mode，开发模式Regregister，注册，登记hdrheaderimplimplementoidObjectIdentifier，对象标识符ou或OUorganizational unitCRLcertificate revocation list，废除证书列表propproposal，申请，交易所发送的申请ACLAccess Control List，访问控制列表rwsetread/write set，读写集tx，Txtransaction，交易CSPcryptographic service provider，BCCSP的后三个字母，加密服务提供者optoption，选项optsoptions，多个选项SKI当前证书标识，所谓标识，一般是对公匙进行一下hashAKI签署方的SKI，也就是签署方的公匙标识HSMHardware Security ModulesksKeyStore，Key存储，这个key指的是用于签名的公匙私匙oidOBJECT IDENTIFIER，对象身份标识来源于网络，待整理确认",
+                        "url": "/allposts/source/abbreviation"
+                    }
+                    ,
+                
+                    "allposts-principle-workflow": {
+                        "title": "工作流程",
+                        "author": "",
+                        "category": "",
+                        "content": "Table of Contents工作流程工作流程Figure 1. 交易流程时序图交易流程(1)客户端通过 SDK 接口向 背书节点 发送交易信息(2)每个 背书节点 模拟处理交易，并不会把交易信息写入账本。背书节点 会验证交易的合法性，并对交易签名，返回给 client。此时没有完成全网共识，各个 client 的交易顺序没有确定，可能存在 双花 问题，还不算是 \"有效的交易\"。(3)client 将签名后的交易发送给 order servic 集群进行交易排序和打包。order servic 集群通过共识算法对交易进行排序，打包成区块。(4)order servic 将打包后的区块广播发送给 提交节点，由其做最后的验证，并写入链。order servic 在发给 提交节点 的同时，是否也发给了 背书节点 ? 待确认",
+                        "url": "/allposts/principle/workflow"
+                    }
+                    
+                
+            };
+
+            $("#search_box").keyup(function() {
+                var searchTerm = $("#search_box").val();
+                if (searchTerm.length === 0) {
+                    $("#content").show()
+                    $("#search_result_container").hide()
+                } else {
+                    $("#search_result_container").show()
+                    $("#content").hide()
+                    search();
+                }
+            });
+
+            $("#search_box").blur(function() {
+                $("#content").show()
+                $("#search_result_container").hide()
+            });
+
+            $("code").each(function() {
+                let $this = $(this);
+                var html = $this.html()
+
+                // replace tab with 4 spaces
+                html = html.replace(/\t/g, "    ")
+                $this.html(html)
+            })
+        </script>
+        <script src="notes_fabric_source/js/prettify.min.js"></script>
+        <script>
+            prettyPrint();
+        </script>
+    </body>
+</html>
