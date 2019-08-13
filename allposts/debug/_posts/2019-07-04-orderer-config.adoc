@@ -1,12 +1,12 @@
-:title: orderer
-:toc: true
-:toclevels: 4
-:page-navtitle: orderder 调试
+:title: orderer-config
+// :toc: true
+// :toclevels: 4
+:page-navtitle: orderder 配置
 :chapter: 2
 :section: 2
 :page-section: {section}
 
-== orderer 调试
+== orderer 配置
 
 orderer 启动时，从 /orderer/main.go 入口
 
@@ -181,3 +181,4 @@ func (v *Viper) find(key string) interface{} {
 }
 ----
 <1> v.automaticEnvApplied 在方法 config.AutomaticEnv() 中被设置为 true
+

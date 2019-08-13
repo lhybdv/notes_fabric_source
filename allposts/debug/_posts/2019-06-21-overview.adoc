@@ -1,12 +1,14 @@
 :title: overview
-:toc: true
-:toclevels: 4
+// :toc: true
+// :toclevels: 4
 :page-navtitle: 概览
 :chapter: 2
 :section: 1
 :page-section: {section}
 
 == 概览
+
+
 
 === 准备工作
 
@@ -29,24 +31,24 @@
 点击菜单项 Run/Edit Configurations
 
 .点击菜单项 Run/Edit Configurations
-image::../../../images/2019-06-25-14-03-43.png[,500]
+image::2019-06-25-14-03-43.png[,500]
 
 ==== 第 2 步
 
 点击弹出窗口左上交的 + 按钮
 
 .弹出窗口左侧 + 按钮
-image::../../../images/2019-06-25-14-09-37.png[,500]
+image::2019-06-25-14-09-37.png[,500]
 
 点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go Build
 
 .configuration 的选项
-image::../../../images/2019-06-25-14-12-24.png[,500]
+image::2019-06-25-14-12-24.png[,500]
 
 ==== 第 3 步
 
 .configuration 的具体设置
-image::../../../images/2019-06-25-14-53-49.png[]
+image::2019-06-25-14-53-49.png[]
 
 . Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。
 . Run kind 包括 Directory, Package, File 几种类型
@@ -57,7 +59,7 @@ image::../../../images/2019-06-25-14-53-49.png[]
 ==== 第 4 步
 
 .创建好的 configurations
-image::../../../images/2019-06-26-10-44-50.png[]
+image::2019-06-26-10-44-50.png[]
 
 选择一个 configuration，然后点击红色的按钮，即可开始调试
 
@@ -88,7 +90,7 @@ Environment::
 . CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)
 . CORE_PEER_ADDRESS=127.0.0.1:7051
 . FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)
-rt
+
 === 调试 create channel
 
 入口位置::
@@ -136,7 +138,3 @@ Environment::
 
 
 CAUTION: 其余部分待补充
-
-
-
-

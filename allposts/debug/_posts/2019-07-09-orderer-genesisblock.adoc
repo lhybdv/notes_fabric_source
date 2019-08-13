@@ -1,0 +1,71 @@
+:title: orderer-genesisblock
+// :toc: true
+// :toclevels: 4
+:page-navtitle: orderer genesisblock
+:chapter: 2
+:section: 3
+:page-section: {section}
+
+== orderer genesisblock
+
+./orderer/common/server/main.go
+[source,go]
+----
+func Start(cmd string, conf *localconfig.TopLevel) {
+	bootstrapBlock := extractBootstrapBlock(conf) // <1>
+    ...
+	lf, _ := createLedgerFactory(conf, metricsProvider) // <2>
+    ...
+    manager := initializeMultichannelRegistrar(clusterBootBlock, r, clusterDialer, clusterServerConfig, clusterGRPCServer, conf, signer, metricsProvider, opsSystem, lf, tlsCallback) // <3>
+}
+----
+<1> 读取创世块信息
+<2> 创建账本文件夹
+<3> 创建默认 channel
+
+=== 读取创世块信息
+
+./orderer/common/server/main.go
+[source,go]
+----
+func extractBootstrapBlock(conf *localconfig.TopLevel) *cb.Block {
+	var bootstrapBlock *cb.Block
+
+	// Select the bootstrapping mechanism
+	switch conf.General.GenesisMethod {
+	case "provisional":
+		bootstrapBlock = encoder.New(genesisconfig.Load(conf.General.GenesisProfile)).GenesisBlockForChannel(conf.General.SystemChannel)
+	case "file":
+		bootstrapBlock = file.New(conf.General.GenesisFile).GenesisBlock() // <1>
+	default:
+		logger.Panic("Unknown genesis method:", conf.General.GenesisMethod)
+	}
+
+	return bootstrapBlock
+}
+----
+<1> 读取了配置项 *General.GenesisFile* 所指定的文件的内容
+
+=== 创建账本文件夹
+
+./orderer/common/server/util.go
+[source,go]
+----
+func createLedgerFactory(conf *config.TopLevel, metricsProvider metrics.Provider) (blockledger.Factory, string) {
+	var lf blockledger.Factory
+	var ld string
+	switch conf.General.LedgerType {
+	case "file":
+		ld = conf.FileLedger.Location // <1>
+        ...
+        lf = fileledger.New(ld, metricsProvider) // <2>
+        ...
+		createSubDir(ld, fsblkstorage.ChainsDir) // <3>
+    ...
+}
+----
+<1> 读取了配置项 FileLedger.Location
+<2> 按 FileLedger.Location 的值，创建了文件夹，并在其下创建了一个 leveldb 的数据库 *index*
+<3> 在 FileLedger.Location 下面创建了 channel 的父文件夹 *chains*
+
+=== 创建默认 channel

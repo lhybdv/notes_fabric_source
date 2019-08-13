@@ -11,7 +11,11 @@ asciidoc: {}
 asciidoctor:
   base_dir: :docdir
   safe: unsafe
+  toc: true
+  toclevels: 5
   attributes:
+    - toc=true
+    - toclevels=5
     - idseparator=_
     - source-highlighter=prettify
     - icons=font
@@ -28,4 +32,3 @@ categories:
     showName: 第三方库
 keep_files:
   - images
-toclevels: 5

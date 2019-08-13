@@ -1,4 +1,6 @@
 :title: kingpin
+:toc: true
+:toclevels: 4
 :page-navtitle: kingpin
 :chapter: 4
 :section: 2
