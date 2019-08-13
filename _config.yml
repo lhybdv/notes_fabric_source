@@ -1,4 +1,5 @@
 title: fabric source
+proj_name: notes_fabric_source
 description: The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.
 permalink: /:categories/:title
 exclude:
@@ -14,13 +15,14 @@ asciidoctor:
   toc: true
   toclevels: 5
   attributes:
+    - proj_name=notes_fabric_source
     - toc=true
     - toclevels=5
     - idseparator=_
     - source-highlighter=prettify
     - icons=font
-    - imagesdir=/images
-    - imagesoutdir=/Users/liuhuiyu/AllNotes/notes_fabric_source/_site/images
+    - imagesdir=/{proj_name}/images
+    - imagesoutdir=/Users/liuhuiyu/AllNotes/{proj_name}/_site/images
 categories:
   - name: principle
     showName: 原理
