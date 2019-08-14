@@ -6,7 +6,7 @@
         <title>Overview</title>
         <meta
             name="description"
-            content="The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc.haha"
+            content="The Jekyll AsciiDoc Quickstart project is a leg-up in starting your own website hosted on GitHub with content based in AsciiDoc."
         />
         <meta name="author" content="Your name goes here" />
         <meta name="copyright" content="Maybe consider a Creative Commons license" />
@@ -31,7 +31,7 @@
                 <ul class="category">
                     
                     <li>
-                        <a>原理哈哈</a>
+                        <a>原理</a>
                     </li>
                     <ul class="post">
                          
@@ -160,7 +160,7 @@
 <p>fabric 源码，fabric-samples 源码</p>
 </li>
 <li>
-<p>GoLand</p>
+<p>GoLand (golang IDE)</p>
 </li>
 </ul>
 </div>
@@ -616,7 +616,7 @@
                         "title": "概览",
                         "author": "",
                         "category": "",
-                        "content": "Table of Contents概览准备工作步骤调试准备第 1 步第 2 步第 3 步第 4 步调试 orderer调试 peer start调试 create channel调试 join channel调试 install chaincode概览准备工作fabric 源码，fabric-samples 源码GoLand步骤用 GoLand 打开 fabric 源码新建 dev-network 目录把 sampleconfig 下的所有文件复制到 dev-network修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径)修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径)在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block调试准备第 1 步点击菜单项 Run/Edit ConfigurationsFigure 1. 点击菜单项 Run/Edit Configurations第 2 步点击弹出窗口左上交的 + 按钮Figure 2. 弹出窗口左侧 + 按钮点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go BuildFigure 3. configuration 的选项第 3 步Figure 4. configuration 的具体设置Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。Run kind 包括 Directory, Package, File 几种类型Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 ; 隔开Program arguments 是程序运行时需要的命令行参数第 4 步Figure 5. 创建好的 configurations选择一个 configuration，然后点击红色的按钮，即可开始调试调试 orderer入口位置orderer/main.go main 函数EnvironmentORDERER_GENERAL_LISTENADDRESS=0.0.0.0ORDERER_GENERAL_GENESISMETHOD=fileORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径)ORDERER_GENERAL_LOCALMSPID=DEFAULTORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径)FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)调试 peer start入口位置peer/main.go main 函数Program argumentsnode start --peer-chaincodedev=trueEnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=peerCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 create channel入口位置peer/main.go main 函数Program argumentschannel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050　　EnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 join channel入口位置peer/main.go main 函数Program argumentschannel join -b myc.blockEnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 install chaincode入口位置peer/main.go main 函数Program argumentschaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0　　EnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)其余部分待补充",
+                        "content": "Table of Contents概览准备工作步骤调试准备第 1 步第 2 步第 3 步第 4 步调试 orderer调试 peer start调试 create channel调试 join channel调试 install chaincode概览准备工作fabric 源码，fabric-samples 源码GoLand (golang IDE)步骤用 GoLand 打开 fabric 源码新建 dev-network 目录把 sampleconfig 下的所有文件复制到 dev-network修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径)修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径)在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block调试准备第 1 步点击菜单项 Run/Edit ConfigurationsFigure 1. 点击菜单项 Run/Edit Configurations第 2 步点击弹出窗口左上交的 + 按钮Figure 2. 弹出窗口左侧 + 按钮点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go BuildFigure 3. configuration 的选项第 3 步Figure 4. configuration 的具体设置Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。Run kind 包括 Directory, Package, File 几种类型Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 ; 隔开Program arguments 是程序运行时需要的命令行参数第 4 步Figure 5. 创建好的 configurations选择一个 configuration，然后点击红色的按钮，即可开始调试调试 orderer入口位置orderer/main.go main 函数EnvironmentORDERER_GENERAL_LISTENADDRESS=0.0.0.0ORDERER_GENERAL_GENESISMETHOD=fileORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径)ORDERER_GENERAL_LOCALMSPID=DEFAULTORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径)FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)调试 peer start入口位置peer/main.go main 函数Program argumentsnode start --peer-chaincodedev=trueEnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=peerCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 create channel入口位置peer/main.go main 函数Program argumentschannel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050　　EnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 join channel入口位置peer/main.go main 函数Program argumentschannel join -b myc.blockEnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)调试 install chaincode入口位置peer/main.go main 函数Program argumentschaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0　　EnvironmentCORE_PEER_LOCALMSPID=DEFAULTCORE_PEER_ID=cliCORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径)CORE_PEER_ADDRESS=127.0.0.1:7051FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)其余部分待补充",
                         "url": "/allposts/debug/overview"
                     }
                     ,
