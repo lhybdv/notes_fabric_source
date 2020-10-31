@@ -3,4 +3,5 @@
         "_site/": true
     },
     "asciidoc.path": "/Users/liuhuiyu/AllNotes/notes_fabric_source/images",
+    "editor.minimap.enabled": false
 }
