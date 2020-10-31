@@ -10,11 +10,13 @@
         />
         <meta name="author" content="Your name goes here" />
         <meta name="copyright" content="Maybe consider a Creative Commons license" />
-        <link rel="stylesheet" href="/notes_fabric_source/css/foundation.css" />
-        <link rel="stylesheet" href="/notes_fabric_source/css/font-awesome.css" />
-        <link rel="stylesheet" href="/notes_fabric_source/css/asciidoctor.css" />
-        <link rel="stylesheet" href="/notes_fabric_source/css/custom.css" />
-        <link rel="stylesheet" href="/notes_fabric_source/css/prettify.min.css" />
+        <link rel="stylesheet" href="/css/foundation.css" />
+        <link rel="stylesheet" href="/css/font-awesome.css" />
+        <link rel="stylesheet" href="/css/asciidoctor.css" />
+        <link rel="stylesheet" href="/css/custom.css" />
+        <link rel="stylesheet" href="/css/prettify.min.css" />
+        <script src="js/vendor/modernizr.js"></script>
+        <script src="js/toc.js"></script>
     </head>
     <body>
         <!-- Main Page Content and Sidebar -->
@@ -36,7 +38,7 @@
                     <ul class="post">
                          
                         <li>
-                            <a href="/notes_fabric_source/allposts/principle/workflow">工作流程</a>
+                            <a href="/allposts/principle/workflow">工作流程</a>
                         </li>
                         
                     </ul>
@@ -47,19 +49,19 @@
                     <ul class="post">
                          
                         <li>
-                            <a href="/notes_fabric_source/allposts/debug/overview">概览</a>
+                            <a href="/allposts/debug/overview">概览</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/debug/orderer-config">orderder 配置</a>
+                            <a href="/allposts/debug/orderer-config">orderder 配置</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/debug/orderer-genesisblock">orderer genesisblock</a>
+                            <a href="/allposts/debug/orderer-genesisblock">orderer genesisblock</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/debug/create-channel">create channel</a>
+                            <a href="/allposts/debug/create-channel">create channel</a>
                         </li>
                         
                     </ul>
@@ -70,19 +72,19 @@
                     <ul class="post">
                          
                         <li>
-                            <a href="/notes_fabric_source/allposts/source/abbreviation">缩写</a>
+                            <a href="/allposts/source/abbreviation">缩写</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/source/directory">目录</a>
+                            <a href="/allposts/source/directory">目录</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/source/peer">peer</a>
+                            <a href="/allposts/source/peer">peer</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/source/orderer">orderer</a>
+                            <a href="/allposts/source/orderer">orderer</a>
                         </li>
                         
                     </ul>
@@ -93,11 +95,11 @@
                     <ul class="post">
                          
                         <li>
-                            <a href="/notes_fabric_source/allposts/third-lib/jww">jww</a>
+                            <a href="/allposts/third-lib/jww">jww</a>
                         </li>
                         
                         <li>
-                            <a href="/notes_fabric_source/allposts/third-lib/kingpin">kingpin</a>
+                            <a href="/allposts/third-lib/kingpin">kingpin</a>
                         </li>
                         
                     </ul>
@@ -136,7 +138,7 @@
 <div class="sectionbody">
 <div class="imageblock">
 <div class="content">
-<img src="/notes_fabric_source/images/diag-974b9a9f3e1be66018ad964563319045.svg" alt="diag 974b9a9f3e1be66018ad964563319045" width="657" height="522">
+<img src="images/diag-974b9a9f3e1be66018ad964563319045.svg" alt="diag 974b9a9f3e1be66018ad964563319045" width="657" height="522">
 </div>
 <div class="title">Figure 1. peer 命令结构</div>
 </div>
@@ -158,16 +160,16 @@
 
         <!-- Footer -->
 
-        <script src="/notes_fabric_source/js/vendor/jquery.js"></script>
-        <script src="/notes_fabric_source/js/foundation.min.js"></script>
-        <script src="/notes_fabric_source/js/vendor/modernizr.js"></script>
-        <script src="/notes_fabric_source/js/toc.js"></script>
+        <script src="/js/vendor/jquery.js"></script>
+        <script src="/js/foundation.min.js"></script>
+        <script src="/js/vendor/modernizr.js"></script>
+        <script src="/js/toc.js"></script>
 
-        <script src="/notes_fabric_source/js/search/lunr.min.js"></script>
-        <script src="/notes_fabric_source/js/search/lunr.stemmer.support.js"></script>
-        <script src="/notes_fabric_source/js/search/tinyseg.js"></script>
-        <script src="/notes_fabric_source/js/search/lunr.ja.js"></script>
-        <script src="/notes_fabric_source/js/search/search.js"></script>
+        <script src="/js/search/lunr.min.js"></script>
+        <script src="/js/search/lunr.stemmer.support.js"></script>
+        <script src="/js/search/tinyseg.js"></script>
+        <script src="/js/search/lunr.ja.js"></script>
+        <script src="/js/search/search.js"></script>
         <script>
             $(document).foundation();
             var doc = document.documentElement;
@@ -292,7 +294,7 @@
                         "title": "概览",
                         "author": "",
                         "category": "",
-                        "content": ":page-layout: _auto:title: overview// :toc: true// :toclevels: 4:page-navtitle: 概览:chapter: 2:section: 1:page-section: {section}== 概览=== 准备工作* fabric 源码，fabric-samples 源码* GoLand=== 步骤. 用 GoLand 打开 fabric 源码. 新建 dev-network 目录. 把 sampleconfig 下的所有文件复制到 dev-network. 修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径). 修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径). 在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block=== 调试准备==== 第 1 步 点击菜单项 Run/Edit Configurations.点击菜单项 Run/Edit Configurationsimage::2019-06-25-14-03-43.png[,500]==== 第 2 步点击弹出窗口左上交的 + 按钮.弹出窗口左侧 + 按钮image::2019-06-25-14-09-37.png[,500]点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go Build.configuration 的选项image::2019-06-25-14-12-24.png[,500]==== 第 3 步.configuration 的具体设置image::2019-06-25-14-53-49.png[]. Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。. Run kind 包括 Directory, Package, File 几种类型. Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件. Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 *;* 隔开. Program arguments 是程序运行时需要的命令行参数==== 第 4 步.创建好的 configurationsimage::2019-06-26-10-44-50.png[]选择一个 configuration，然后点击红色的按钮，即可开始调试=== 调试 orderer 入口位置::orderer/main.go main 函数Environment::. ORDERER_GENERAL_LISTENADDRESS=0.0.0.0. ORDERER_GENERAL_GENESISMETHOD=file. ORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径). ORDERER_GENERAL_LOCALMSPID=DEFAULT. ORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径). FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)=== 调试 peer start入口位置::peer/main.go main 函数Program arguments::node start --peer-chaincodedev=trueEnvironment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=peer. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 create channel入口位置::peer/main.go main 函数Program arguments::channel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050　　Environment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 join channel入口位置::peer/main.go main 函数Program arguments::channel join -b myc.blockEnvironment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 install chaincode入口位置::peer/main.go main 函数Program arguments::chaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0　　Environment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)CAUTION: 其余部分待补充",
+                        "content": ":page-layout: _auto:title: overview:page-navtitle: 概览:chapter: 2:section: 1:page-section: {section}== 概览=== 准备工作* fabric 源码，fabric-samples 源码* GoLand (golang IDE)=== 步骤. 用 GoLand 打开 fabric 源码. 新建 dev-network 目录. 把 sampleconfig 下的所有文件复制到 dev-network. 修改 core.yaml 中 fileSystemPath = fabric源码目录下dev-network/production/peer(绝对路径). 修改 orderer.yaml 中 Location = fabric源码目录下dev-network/production/orderer(绝对路径). 在 dev-network 新建 config，并复制 fabric-samples 模块 chaincode-docker-devmode下的 myc.tx 和 orderer.block=== 调试准备==== 第 1 步 点击菜单项 Run/Edit Configurations.点击菜单项 Run/Edit Configurationsimage::2019-06-25-14-03-43.png[,500]==== 第 2 步点击弹出窗口左上交的 + 按钮.弹出窗口左侧 + 按钮image::2019-06-25-14-09-37.png[,500]点击 + 按钮之后，会弹出若干 configuration 的选项，选择 Go Build.configuration 的选项image::2019-06-25-14-12-24.png[,500]==== 第 3 步.configuration 的具体设置image::2019-06-25-14-53-49.png[,500]. Name 是 configuration 的名字，与左侧的列表中的名字相对应，便于调试的时候进行选择。. Run kind 包括 Directory, Package, File 几种类型. Files 是真正需要去编译的文件，如果 Run kind 选择了 File，那么 Files 需要指定到某一个作为入口的 main.go 文件. Environment 是环境变量。除了系统级别的环境变量意外，这里可以以 configuration 为单位设置环境变量，这样就更加灵活，互相之间不会干扰，也不会污染系统环境。多个环境变量之间用分号 *;* 隔开. Program arguments 是程序运行时需要的命令行参数==== 第 4 步.创建好的 configurationsimage::2019-06-26-10-44-50.png[,500]选择一个 configuration，然后点击红色的按钮，即可开始调试=== 调试 orderer 入口位置::orderer/main.go main 函数Environment::. ORDERER_GENERAL_LISTENADDRESS=0.0.0.0. ORDERER_GENERAL_GENESISMETHOD=file. ORDERER_GENERAL_GENESISFILE=fabric源码目录下dev-network/config/orderer.block(绝对路径). ORDERER_GENERAL_LOCALMSPID=DEFAULT. ORDERER_GENERAL_LOCALMSPDIR=fabric源码目录下dev-network/msp(绝对路径). FABRIC_CFG_PATH=fabric源码目录下dev-network(绝对路径)=== 调试 peer start入口位置::peer/main.go main 函数Program arguments::node start --peer-chaincodedev=trueEnvironment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=peer. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 create channel入口位置::peer/main.go main 函数Program arguments::channel create -c myc -f fabric源码目录下dev-network/config/myc.tx(绝对路径) -o 127.0.0.1:7050　　Environment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 join channel入口位置::peer/main.go main 函数Program arguments::channel join -b myc.blockEnvironment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)=== 调试 install chaincode入口位置::peer/main.go main 函数Program arguments::chaincode install -p github.com/hyperledger/fabric/examples/chaincode/go/chaincode_example02 -n mycc -v 1.0　　Environment::. CORE_PEER_LOCALMSPID=DEFAULT. CORE_PEER_ID=cli. CORE_PEER_MSPCONFIGPATH=fabric源码目录下dev-network/msp(绝对路径). CORE_PEER_ADDRESS=127.0.0.1:7051. FABRIC_CFG_PATH=fabric源码目录下/dev-network(绝对路径)CAUTION: 其余部分待补充",
                         "url": "/allposts/debug/overview"
                     }
                     ,
@@ -361,7 +363,7 @@
                 $this.html(html)
             })
         </script>
-        <script src="/notes_fabric_source/js/prettify.min.js"></script>
+        <script src="/js/prettify.min.js"></script>
         <script>
             prettyPrint();
         </script>
