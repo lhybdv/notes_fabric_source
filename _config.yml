@@ -20,6 +20,7 @@ asciidoctor:
     source-highlighter: prettify
     icons: font
     imagesdir: "images/"
+    page-root: /notes_fabric_source
 categories:
   - name: principle
     showName: 原理

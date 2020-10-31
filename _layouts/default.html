@@ -38,7 +38,7 @@
                     <ul class="post">
                         {% assign posts_sorted = category[1] | sort: 'section' %} {% for post in posts_sorted %}
                         <li>
-                            <a href="{{ post.url }}">{{ post.navtitle }}</a>
+                            <a href="{{page.root}}{{ post.url }}">{{ post.navtitle }}</a>
                         </li>
                         {% endfor %}
                     </ul>
