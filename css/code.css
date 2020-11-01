@@ -1,0 +1,80 @@
+code {
+    font-family: 'Sarasa Mono SC';
+    /* background-color: #eee !important; */
+    tab-size: 4;
+    color: black;
+}
+
+.hljs table {
+    background-color: #282c34 !important;
+}
+
+.hljs table tr {
+    background-color: #282c34;
+}
+
+.hljs table tr td {
+    color: #abb2bf;
+}
+
+.hljs-ln {
+    /* background-color: var(--code-bg-color); */
+    border: none;
+    margin-bottom: 0;
+}
+
+td.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    background-color: #282c34 !important;
+    /* color: #888; */
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 10px !important;
+    margin-right: 5px;
+    /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+    padding-left: 10px !important;
+}
+
+pre {
+    font-family: 'Sarasa Mono SC';
+}
+
+pre .conum[data-value] {
+    position: relative;
+    top: -.125em;
+}
+
+.conum[data-value] {
+    display: inline-block;
+    color: rgba(0, 0, 0, 0.8)!important;
+    background: #abb2bf;
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: .75em;
+    width: 1.67em;
+    height: 1.67em;
+    line-height: 1.67em;
+    font-family: "Open Sans","DejaVu Sans",sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.conum[data-value]::after {
+    content: attr(data-value);
+}
+
+.conum[data-value]+b {
+    display: none;
+}
