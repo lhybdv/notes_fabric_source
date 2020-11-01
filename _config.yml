@@ -17,10 +17,9 @@ asciidoctor:
     toc: true
     toclevels: 5
     idseparator: _
-    source-highlighter: prettify
+    source-highlighter: highlightjs
     icons: font
     imagesdir: "images/"
-    page-root: /notes_fabric_source
 categories:
   - name: principle
     showName: 原理

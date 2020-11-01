@@ -1,177 +1,232 @@
 <!DOCTYPE html>
-<html class="no-js" lang="en" data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)">
-    <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>{{ page.title }}</title>
-        <meta
-            name="description"
-            content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
-        />
-        <meta name="author" content="Your name goes here" />
-        <meta name="copyright" content="Maybe consider a Creative Commons license" />
-        <link rel="stylesheet" href="{{page.root}}/css/foundation.css" />
-        <link rel="stylesheet" href="{{page.root}}/css/font-awesome.css" />
-        <link rel="stylesheet" href="{{page.root}}/css/asciidoctor.css" />
-        <link rel="stylesheet" href="{{page.root}}/css/custom.css" />
-        <link rel="stylesheet" href="{{page.root}}/css/prettify.min.css" />
-        <script src="{{page.root}}js/vendor/modernizr.js"></script>
-        <script src="{{page.root}}js/toc.js"></script>
-    </head>
-    <body>
-        <!-- Main Page Content and Sidebar -->
+<html
+    class="no-js"
+    lang="en"
+    data-useragent="Mozilla/5.0 (compatible; MSIE 10.0; Windows NT 6.2; Trident/6.0)"
+>
 
-        <!-- Sidebar -->
+<head>
+    <meta charset="utf-8" />
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    />
+    <title>{{ page.title }}</title>
+    <meta
+        name="description"
+        content="{% if page.description %}{{ page.description }}{% else %}{{ site.description }}{% endif %}"
+    />
+    <meta
+        name="author"
+        content="Your name goes here"
+    />
+    <meta
+        name="copyright"
+        content="Maybe consider a Creative Commons license"
+    />
+    <link
+        rel="stylesheet"
+        href="{{page.root}}/css/foundation.css"
+    />
+    <link
+        rel="stylesheet"
+        href="{{page.root}}/css/font-awesome.css"
+    />
+    <!-- <link rel="stylesheet" href="{{page.root}}/css/asciidoctor.css" /> -->
+    <!-- <link rel="stylesheet" href="{{page.root}}/css/code.css" /> -->
+    <link
+        rel="stylesheet"
+        href="{{page.root}}/css/one-dark.css"
+    />
+    <!-- <link rel="stylesheet" href="{{page.root}}/css/custom.css" /> -->
+    <link
+        rel="stylesheet"
+        href="{{page.root}}/css/custom-one-dark.css"
+    />
+    <link
+        rel="stylesheet"
+        href="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.2/build/styles/atom-one-dark.min.css"
+    />
+</head>
 
-        <div class="post with-summary">
-            <div class="post-summary">
-                <div class="search-container">
-                    <!-- <a href="/">{{ site.title }}</a> -->
-                    <input id="search_box" type="search" placeholder="Search..." />
-                    <i class="fa fa-search"></i>
-                </div>
-                <ul class="category">
-                    {% for category in site.categories_sorted %}
-                    <li>
-                        <a>{{ category[2] }}</a>
-                    </li>
-                    <ul class="post">
-                        {% assign posts_sorted = category[1] | sort: 'section' %} {% for post in posts_sorted %}
-                        <li>
-                            <a href="{{page.root}}{{ post.url }}">{{ post.navtitle }}</a>
-                        </li>
-                        {% endfor %}
-                    </ul>
-                    {% endfor %}
-                </ul>
+<body>
+    <!-- Main Page Content and Sidebar -->
+
+    <!-- Sidebar -->
+
+    <div class="post with-summary">
+        <div class="post-summary">
+            <div class="search-container">
+                <!-- <a href="/">{{ site.title }}</a> -->
+                <input
+                    id="search_box"
+                    type="search"
+                    placeholder="Search..."
+                />
+                <i class="fa fa-search"></i>
             </div>
+            <ul
+                class="category accordion"
+                data-accordion
+                data-options="multi_expand:true;"
+            >
+                {% for category in site.categories_sorted %}
+                <li class="accordion-navigation">
+                    <a href="#{{category[0]}}">{{ category[2] }}</a>
+                    <div
+                        id="{{category[0]}}"
+                        class="content"
+                    >
+                        <ul class="post">
+                            {% assign posts_sorted = category[1] | sort: 'section' %} {% for post in posts_sorted %}
+                            <li>
+                                <a href="{{site.proj_path}}{{ post.url }}">{{ post.navtitle }}</a>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
 
-            <!-- End Sidebar -->
+        <!-- End Sidebar -->
 
-            <!-- Main Blog Content -->
-            <div class="post-body" role="content">
-                <div class="body-container">
-                    <div class="page-header">
-                        <a class="btn pull-left">
-                            <i class="fa fa-align-justify"></i>
-                        </a>
-                        <div class="project-title">
-                            <div class="project-title-inner">
-                                <a href="/">
-                                    {{ site.title }}
-                                </a>
-                            </div>
+        <!-- Main Blog Content -->
+        <div
+            class="post-body"
+            role="content"
+        >
+            <div class="body-container">
+                <div class="page-header">
+                    <a class="btn pull-left">
+                        <i class="fa fa-align-justify"></i>
+                    </a>
+                    <div class="project-title">
+                        <div class="project-title-inner">
+                            <a href="/">
+                                {{ site.title }}
+                            </a>
                         </div>
                     </div>
-                    <div class="content-container">
-                        <div>
-                            <div id="content" class="page-inner">
-                                {{ content }}
-                            </div>
-                            <div id="search_result_container" class="page-inner">
-                                <ul id="search-results"></ul>
-                            </div>
+                </div>
+                <div class="content-container">
+                    <div>
+                        <div
+                            id="content"
+                            class="page-inner"
+                        >
+                            {{ content }}
+                        </div>
+                        <div
+                            id="search_result_container"
+                            class="page-inner"
+                        >
+                            <ul id="search-results"></ul>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+    </div>
 
-        <!-- End Main Content -->
+    <!-- End Main Content -->
 
-        <!-- End Main Content and Sidebar -->
+    <!-- End Main Content and Sidebar -->
 
-        <!-- Footer -->
+    <!-- Footer -->
 
-        <script src="{{page.root}}/js/vendor/jquery.js"></script>
-        <script src="{{page.root}}/js/foundation.min.js"></script>
-        <script src="{{page.root}}/js/vendor/modernizr.js"></script>
-        <script src="{{page.root}}/js/toc.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/jquery@2.2.4/dist/jquery.min.js"></script>
+    <script src="{{page.root}}/js/foundation.min.js"></script>
+    <script src="{{page.root}}/js/vendor/modernizr.js"></script>
+    <script src="{{page.root}}/js/toc.js"></script>
 
-        <script src="{{page.root}}/js/search/lunr.min.js"></script>
-        <script src="{{page.root}}/js/search/lunr.stemmer.support.js"></script>
-        <script src="{{page.root}}/js/search/tinyseg.js"></script>
-        <script src="{{page.root}}/js/search/lunr.ja.js"></script>
-        <script src="{{page.root}}/js/search/search.js"></script>
-        <script>
-            $(document).foundation();
-            var doc = document.documentElement;
-            doc.setAttribute("data-useragent", navigator.userAgent);
+    <script src="{{page.root}}/js/search/lunr.min.js"></script>
+    <script src="{{page.root}}/js/search/lunr.stemmer.support.js"></script>
+    <script src="{{page.root}}/js/search/tinyseg.js"></script>
+    <script src="{{page.root}}/js/search/lunr.ja.js"></script>
+    <script src="{{page.root}}/js/search/search.js"></script>
+    <script>
+        $(document).foundation();
+        var doc = document.documentElement;
+        doc.setAttribute("data-useragent", navigator.userAgent);
 
-            var host = window.location.host;
-            var wholeHref = window.location.href;
+        var host = window.location.host;
+        var wholeHref = window.location.href;
 
-            var href = wholeHref
-                .replace("https://", "")
-                .replace("http://", "")
-                .replace(host, "");
+        var href = wholeHref
+            .replace("https://", "")
+            .replace("http://", "")
+            .replace(host, "");
 
-            var list = $(".post > li > a");
-            list.each(function() {
-                if ($(this).attr("href") === href) {
-                    $(this).addClass("active");
-                    return false;
+        var list = $(".post > li > a");
+        list.each(function () {
+            if ($(this).attr("href") === href) {
+                $(this).addClass("active");
+                $(this).parentsUntil(".accordion-navigation").addClass("active");
+                return false;
+            }
+        });
+
+        $(".btn.pull-left").click(function () {
+            var $post = $(".post");
+            if ($post.hasClass("with-summary")) {
+                $(".post-summary").animate({ left: "-300px" }, "fast");
+                $(".post-body").animate({ left: 0 }, "fast", function () {
+                    $post.removeClass("with-summary");
+                });
+                $(".page-header").animate({ left: 0 }, "fast")
+            } else {
+                $(".post-summary").animate({ left: 0 }, "fast");
+                $(".post-body").animate({ left: "300px" }, "fast");
+                $post.addClass("with-summary");
+                $(".page-header").animate({ left: "300px" }, "fast")
+            }
+        });
+
+        window.store = {
+            {% for post in site.posts %}
+                "{{ post.url | slugify }}": {
+                    "title": "{{ post.navtitle | xml_escape }}",
+                    "author": "{{ post.author | xml_escape }}",
+                    "category": "{{ post.category | xml_escape }}",
+                    "content": {{ post.content | strip_html | strip_newlines | jsonify }},
+                    "url": "{{ post.url | xml_escape }}"
                 }
-            });
+                {% unless forloop.last %},{% endunless %}
+            {% endfor %}
+        };
 
-            $(".btn.pull-left").click(function() {
-                var $post = $(".post");
-                if ($post.hasClass("with-summary")) {
-                    $(".post-summary").animate({ left: "-300px" }, "slow");
-                    $(".post-body").animate({ left: 0 }, "slow", function() {
-                        $post.removeClass("with-summary");
-                    });
-                    $(".page-header").animate({left:0}, "slow")
-                } else {
-                    $(".post-summary").animate({ left: 0 }, "slow");
-                    $(".post-body").animate({ left: "300px" }, "slow");
-                    $post.addClass("with-summary");
-                    $(".page-header").animate({left: "300px"}, "slow")
-                }
-            });
-
-            window.store = {
-                {% for post in site.posts %}
-                    "{{ post.url | slugify }}": {
-                        "title": "{{ post.navtitle | xml_escape }}",
-                        "author": "{{ post.author | xml_escape }}",
-                        "category": "{{ post.category | xml_escape }}",
-                        "content": {{ post.content | strip_html | strip_newlines | jsonify }},
-                        "url": "{{ post.url | xml_escape }}"
-                    }
-                    {% unless forloop.last %},{% endunless %}
-                {% endfor %}
-            };
-
-            $("#search_box").keyup(function() {
-                var searchTerm = $("#search_box").val();
-                if (searchTerm.length === 0) {
-                    $("#content").show()
-                    $("#search_result_container").hide()
-                } else {
-                    $("#search_result_container").show()
-                    $("#content").hide()
-                    search();
-                }
-            });
-
-            $("#search_box").blur(function() {
+        $("#search_box").keyup(function () {
+            var searchTerm = $("#search_box").val();
+            if (searchTerm.length === 0) {
                 $("#content").show()
                 $("#search_result_container").hide()
-            });
+            } else {
+                $("#search_result_container").show()
+                $("#content").hide()
+                search();
+            }
+        });
 
-            $("code").each(function() {
-                let $this = $(this);
-                var html = $this.html()
+        $("#search_box").blur(function () {
+            $("#content").show()
+            $("#search_result_container").hide()
+        });
 
-                // replace tab with 4 spaces
-                html = html.replace(/\t/g, "    ")
-                $this.html(html)
-            })
-        </script>
-        <script src="{{page.root}}/js/prettify.min.js"></script>
-        <script>
-            prettyPrint();
-        </script>
-    </body>
+        $("code").each(function () {
+            let $this = $(this);
+            var html = $this.html()
+
+            // replace tab with 4 spaces
+            html = html.replace(/\t/g, "    ")
+            $this.html(html)
+        });
+    </script>
+    <script src="https://cdn.jsdelivr.net/gh/highlightjs/cdn-release@10.3.1/build/highlight.min.js"></script>
+    <script
+        src="https://cdn.jsdelivr.net/npm/highlightjs-line-numbers.js@2.8.0/dist/highlightjs-line-numbers.min.js"></script>
+    <script>hljs.initHighlightingOnLoad(); hljs.initLineNumbersOnLoad();</script>
+</body>
+
 </html>

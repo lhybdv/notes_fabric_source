@@ -1,0 +1,144 @@
+body {
+    /* background-color: #f7f7f7; */
+    background-color: #ffffff;
+    color: #303030;
+    font-family: 'Sarasa Mono SC';
+    font-size:16px;
+    padding: 50px;
+    line-height: 1.5em;
+}
+
+#img-avatar {
+    border: 2px dashed #303030;
+    padding: 10px;
+    align-self: center;
+    overflow-y: hidden;
+    width: 162px;
+    height: 224px;
+}
+
+h2 {
+    overflow: hidden;
+    text-align: center;
+    margin-top: 50px;
+}
+h2:before,
+h2:after {
+    background-color: #303030;
+    content: "";
+    display: inline-block;
+    height: 1px;
+    position: relative;
+    vertical-align: middle;
+    width: 50%;
+}
+h2:before {
+    right: 0.5em;
+    margin-left: -50%;
+}
+h2:after {
+    left: 0.5em;
+    margin-right: -50%;
+}
+
+.red {
+    color: yellow;
+}
+
+td {
+    vertical-align: top;
+}
+
+table.summary td {
+    padding: 20px;
+}
+
+table.list {
+    margin-top: 50px;
+}
+
+table.list td:nth-child(1) {
+    padding-right: 20px;
+}
+
+table.list td:nth-child(2) {
+    border-left: 2px solid #aaa;
+    padding-left: 20px;
+}
+
+table.border {
+    border-collapse: collapse;
+}
+
+table.border td {
+    border: 1px solid gray;
+    vertical-align: top;
+    padding: 0 10px ;
+}
+
+.item-title {
+    border-bottom: 2px solid #aaa;
+    display: block;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    padding-bottom: 5px;
+    width: 200px;
+}
+
+.item-title:before {
+    content: "• ";
+}
+
+.item-title.first {
+    margin-top: -15px;
+}
+
+/* .title {
+    display: block;
+    font-size: 60px;
+    margin-bottom: 40px;    
+} */
+
+.middle {
+    font-size: 40px;
+    margin-bottom: 30px;    
+}
+
+.small {
+    font-size: 30px
+}
+
+.italic {
+    font-style: italic;
+}
+
+text[style] {
+    font-family: 'Sarasa Mono SC' !important;
+}
+
+code {
+    font-family: 'Sarasa Mono SC';
+    background-color: #eee !important;
+}
+
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #ccc;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 5px;
+
+    /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+    padding-left: 10px;
+}

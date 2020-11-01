@@ -1,0 +1,248 @@
+@import "https://fonts.googleapis.com/css?family=Open+Sans:300,300italic,400,400italic,600,600italic%7CNoto+Serif:400,400italic,700,700italic%7CDroid+Sans+Mono:400,700";
+body {
+    background-color: #f7f7f7;
+    color: #303030;
+    font-family: 'Sarasa Mono SC';
+    font-size:16px;
+    padding: 50px;
+    line-height: 1.5em;
+}
+
+#img-avatar {
+    border: 2px dashed #303030;
+    padding: 10px;
+    align-self: center;
+    overflow-y: hidden;
+    width: 162px;
+    height: 224;
+}
+
+.red {
+    color: yellow;
+}
+
+td {
+    vertical-align: top;
+}
+
+table.summary td {
+    padding: 20px;
+}
+
+table.list {
+    margin-top: 50px;
+}
+
+table.list td:nth-child(1) {
+    padding-right: 20px;
+}
+
+table.list td:nth-child(2) {
+    border-left: 2px solid #aaa;
+    padding-left: 20px;
+}
+
+table.border {
+    border-collapse: collapse;
+}
+
+table.border td {
+    border: 1px solid gray;
+    vertical-align: top;
+    padding: 0 10px ;
+}
+
+.item-title {
+    border-bottom: 2px solid #aaa;
+    display: block;
+    font-weight: bold;
+    margin: 20px 0 10px 0;
+    padding-bottom: 5px;
+    width: 200px;
+}
+
+.item-title:before {
+    content: "• ";
+}
+
+.item-title.first {
+    margin-top: -15px;
+}
+
+/* .title {
+    display: block;
+    font-size: 60px;
+    margin-bottom: 40px;    
+} */
+
+.middle {
+    font-size: 40px;
+    margin-bottom: 30px;    
+}
+
+.small {
+    font-size: 30px
+}
+
+.italic {
+    font-style: italic;
+}
+
+text[style] {
+    font-family: 'Sarasa Mono SC' !important;
+}
+
+code {
+    font-family: 'Sarasa Mono SC';
+    background-color: #eee !important;
+    tab-size: 4;
+}
+
+.hljs-ln-numbers {
+    -webkit-touch-callout: none;
+    -webkit-user-select: none;
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+
+    text-align: center;
+    color: #888;
+    border-right: 1px solid #CCC;
+    vertical-align: top;
+    padding-right: 10px !important;
+    margin-right: 5px;
+    /* your custom style here */
+}
+
+/* for block of code */
+.hljs-ln-code {
+    padding-left: 10px !important;
+}
+
+pre {
+    font-family: 'Sarasa Mono SC';
+}
+
+pre .conum[data-value] {
+    position: relative;
+    top: -.125em;
+}
+
+code {
+    color: black;
+}
+
+.conum[data-value] {
+    display: inline-block;
+    color: #fff!important;
+    background: rgba(0,0,0,.8);
+    -webkit-border-radius: 100px;
+    border-radius: 100px;
+    text-align: center;
+    font-size: .75em;
+    width: 1.67em;
+    height: 1.67em;
+    line-height: 1.67em;
+    font-family: "Open Sans","DejaVu Sans",sans-serif;
+    font-style: normal;
+    font-weight: bold;
+}
+
+.conum[data-value]::after {
+    content: attr(data-value);
+}
+
+.conum[data-value]+b {
+    display: none;
+}
+
+.admonitionblock td.icon [class^="fa icon-"] {
+    font-size: 2.5em;
+    text-shadow: 1px 1px 2px rgba(0,0,0,.5);
+    cursor: default;
+}
+
+fa {
+    display: inline-block;
+    font: normal normal normal 14px/1 FontAwesome;
+    font-size: inherit;
+    text-rendering: auto;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+table tr th, table tr td {
+    padding: .5625em .625em;
+    font-size: inherit;
+    color: rgba(0,0,0,.8);
+}
+
+table {
+    margin-bottom: 1.25em;
+}
+
+tr {
+    display: table-row;
+    vertical-align: inherit;
+    border-color: inherit;
+}
+
+td {
+    display: table-cell;
+    vertical-align: inherit;
+}
+
+*, *::before, *::after {
+    -moz-box-sizing: border-box;
+    /* -webkit-box-sizing: border-box; */
+    box-sizing: border-box;
+}
+
+p, blockquote, dt, td.content, span.alt {
+    font-size: 1.0625rem;
+}
+
+tbody {
+    display: table-row-group;
+    vertical-align: middle;
+    border-color: inherit;
+}
+
+.admonitionblock>table td.icon {
+    text-align: center;
+    width: 80px;
+}
+
+.admonitionblock td.icon .icon-note::before {
+    content: "\f05a";
+    color: #19407c;
+}
+
+.admonitionblock td.icon .icon-tip::before {
+    content: "\f0eb";
+    text-shadow: 1px 1px 2px rgba(155,155,0,.8);
+    color: #111;
+}
+
+.admonitionblock td.icon .icon-important::before {
+    content: "\f06a";
+    color: #bf0000;
+}
+
+.admonitionblock td.icon .icon-warning::before {
+    content: "\f071";
+    color: #bf6900;
+}
+
+.admonitionblock td.icon .icon-caution::before {
+    content: "\f06d";
+    color: #bf3400;
+}
+
+.admonitionblock>table td.content {
+    padding-left: 1.125em;
+    padding-right: 1.25em;
+    border-left: 1px solid #dddddf;
+    color: rgba(0,0,0,.6);
+}
